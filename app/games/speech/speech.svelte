@@ -60,7 +60,7 @@ const restartListener = async () => {
             returnPartialResults: true,
             // this callback will be invoked repeatedly during recognition
             onResult: (transcription: SpeechRecognitionTranscription) => {
-                result += transcription.text;
+                result = transcription.text;
             },
             onError: (error: string | number) => {
                 console.log(error)
