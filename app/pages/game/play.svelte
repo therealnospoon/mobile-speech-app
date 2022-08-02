@@ -54,7 +54,7 @@ const handleWin = () => {
                 levelIndex,
             }
         });
-    }, 500);
+    }, 1000);
 }
 
 const handleLose =  () => navigate({
