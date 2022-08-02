@@ -2,14 +2,16 @@
     <actionBar>
         <stackLayout class="px-2 mx-2 mb-4" width="100%">
             <flexboxLayout justifyContent="space-between" width="100%">
-               <!-- svelte-ignore a11y-label-has-associated-control -->
-               <label>
-                <formattedString>
-                    <span text="{game.name}" class="text text-h2" />
-                </formattedString>
+                <!-- svelte-ignore a11y-label-has-associated-control -->
+                <label>
+                    <formattedString>
+                        <span text="{game.name}" class="text text-h2" />
+                    </formattedString>
                 </label>
-    
-                <image src="~/static/close.png" width="24" on:tap={handleClose}/>
+
+                {#if !won}
+                    <image src="~/static/close.png" width="24" on:tap={handleClose}/>
+                {/if}
             </flexboxLayout>
         </stackLayout>
     </actionBar>
@@ -37,15 +39,23 @@ import Home from "~/pages/home.svelte";
 export let game:Game = GameDefaults;
 export let levelIndex:number;
 
-const handleWin = () => navigate({
-    // @ts-ignore
-    page: Win,
-    clearHistory: true,
-    props : {
-        game,
-        levelIndex,
-    }
-});
+let won = false;
+
+const handleWin = () => {
+    won = true;
+
+    setTimeout(() => {
+        navigate({
+            // @ts-ignore
+            page: Win,
+            clearHistory: true,
+            props : {
+                game,
+                levelIndex,
+            }
+        });
+    }, 500);
+}
 
 const handleLose =  () => navigate({
     // @ts-ignore

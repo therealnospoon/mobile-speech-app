@@ -119,9 +119,7 @@
 		if(card.value === level.config.word.toLowerCase()) {
 			successIndex = idx;
 
-			setTimeout(() => {
-				dispatch("win");
-			}, 1000)
+			dispatch("win");
 		} else {
 			incorrectIndex = idx;
 
