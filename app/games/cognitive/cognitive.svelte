@@ -82,9 +82,7 @@ const handleCard = (card, idx) => {
 
 	// If all matched
 	if(level.config.cards.every((card) => matched.includes(card))) {
-		setTimeout(() => {
-			dispatch("win");
-		}, 1000)
+		dispatch("win");
 	}
 }
 
