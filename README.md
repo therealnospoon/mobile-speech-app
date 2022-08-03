@@ -23,8 +23,8 @@ Install the following apps and utilities.
 2. Navigate to the project and open it in VSCode. `cd ~/wherever-it-cloned/s2m-mobile && code .`
 3. Install `npm install`
 
-## Run Project
-**Dev Command**: `ns run ios`
+## Start Dev Command
+`ns run ios`
 
 ### ⚠️ First Time?
 The first time you run `ns run ios` it might not work. This is because the first time you run the command, it will generate a boilerplate XCode project `/platforms, and now we have to continue setup in XCode. See XCode Setup below. Once set up, you can just run the dev command in the future.
