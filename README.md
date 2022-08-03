@@ -6,7 +6,7 @@ This project uses SvelteNative which is a programming language and templating fr
 - [SvelteNative](https://svelte-native.technology/)
 - [NativeScript](https://nativescript.org/)
 
-## Development Setup (MacOs + iOS)
+# Runbook
 
 ### Environment Setup
 Install the following apps and utilities.
