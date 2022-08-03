@@ -24,7 +24,7 @@ Install the following apps and utilities.
 3. Install `npm install`
 
 ### Run Project
-**Dev command**: `ns run ios`
+**Dev Command**: `ns run ios`
 
 #### ⚠️ First Time?
 The first time you run `ns run ios` it might not work. This is because the first time you run the command, it will generate a boilerplate XCode project `/platforms`, and now we have to continue setup in XCode. See XCode Setup below. Once setup, you can just run the dev command in the future.
@@ -39,8 +39,12 @@ You need an Apple developer account/team for the next steps. If you don't have o
 3. Select/add an Apple Developer account in the "Team" field
 
 #### Setup Own Phone
-To run the app on your own phone, plug in your iOS device and select it by clicking the build target at the top of XCode. Be sure to "Trust" any prompts that might come up.
+To run the app on your own phone, plug in your iOS device and select it by clicking the build target at the top of XCode. Be sure to "Trust" any prompts that might come up. Once your phone is selected, click the play button to attempt to build the app on your phone. If it works, then the dev command should work as well. You can now use `ns run ios` to run/build the project from now on. If there are any errors, they will be mentioned in XCode, let the team know.
 
 # Direct Individuals Responsible
 - Lucas Hugdahl | 425-367-8665 | lucashugdahl@gmail.com
 - Rotem Avisar  | 216-702-7884‬ | rotem.avisar@gmail.com
+
+# Discord Server
+Join our internal dev chat. This is where we share code reviews and ask questions.
+https://discord.gg/btCzcjUtRz
