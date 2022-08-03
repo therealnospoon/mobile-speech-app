@@ -23,7 +23,7 @@ Install the following apps and utilities.
 2. Navigate to the project and open it in VSCode. `cd ~/wherever-it-cloned/s2m-mobile && code .`
 3. Install `npm install`
 
-## Start Dev Command
+## Start Development Server
 `ns run ios`
 
 ### ⚠️ First Time?
