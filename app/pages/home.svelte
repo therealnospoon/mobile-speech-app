@@ -1,5 +1,5 @@
 <page class="page">
-	<actionBar title="Speak2Me" style="text" color="black"/>
+	<actionBar title="Speak2Me" color="black"/>
 
 	<stackLayout class="p-1">
 		<Nav />
