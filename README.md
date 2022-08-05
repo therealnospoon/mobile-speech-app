@@ -21,6 +21,9 @@ Install the following apps and utilities.
 
 1. **[XCode](https://developer.apple.com/xcode/)**: Used for building the app sometimes and publishing it.
 2. **[VSCode](https://code.visualstudio.com/)** (recommended): Primary project IDE.
+    a. Install ESLint
+    b. Install Stylelint
+    c. Install Better Comments
 3. **[Node](https://nodejs.org/en/)**: Node 16 seems to be required. Be sure to install version 16 or use [NVM](https://github.com/nvm-sh/nvm) to switch versions.
 4. **Setup NativeScript**: Follow the [Environment Setup](https://docs.nativescript.org/environment-setup.html#macos-ios) guide provided by NativeScript for MacOS + iOS.
 
