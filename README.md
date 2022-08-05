@@ -252,4 +252,3 @@ Each level must have a `timeLimit` and `config` property. The `config` property 
     const handleWin = () => dispatch("win");
 </script>
 ```
-
