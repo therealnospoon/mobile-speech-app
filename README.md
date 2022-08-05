@@ -52,6 +52,9 @@ You need an Apple developer account/team for the next steps. If you don't have o
 ### Setup Own Phone
 To run the app on your phone, plug in your iOS device and select it by clicking the build target at the top of XCode. Be sure to "Trust" any prompts that might come up. Once your phone is selected, click the play button to attempt to build the app on your phone. If it works, then the dev command should work as well. You can now use `ns run ios` to run/build the project from now on. If there are any errors, they will be mentioned in XCode, and let the team know.
 
+## Tests
+Run tests by running `tsn test ios`. More info here https://v6.docs.nativescript.org/tooling/docs-cli/project/testing/test-ios.
+
 # Development Guide
 
 **Start Dev**: `ns run ios`
