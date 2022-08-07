@@ -1,39 +1,39 @@
-<page class="page">
-	<actionBar title="Cognitive" style="text" color="black"/>
-
-	<stackLayout class="p-2" >
-        {#if !isReady}
-            <!-- svelte-ignore a11y-label-has-associated-control -->
-            <label class="animate-fade-in">
-                <formattedString>
-                    <span text="Loading.." class="text" />
-                </formattedString>
-            </label>
-        {:else}
-            <!-- svelte-ignore a11y-label-has-associated-control -->
-            <label class="animate-fade-in">
-                <formattedString>
-                    <span text="Listening..." class="text text-h2" />
-                </formattedString>
-            </label>
-            <!-- svelte-ignore a11y-label-has-associated-control -->
-            <textView class="animate-fade-in" >
-                <formattedString>
-                    <span text="{result}" textWrap={true} class="text text" />
-                </formattedString>
-            </textView>
-        {/if}
-	</stackLayout>
-</page>
+<GameNav game="{game}" onClose="{stopListener}" />
+<stackLayout class="p-2" >
+    {#if !isReady}
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label class="animate-fade-in">
+            <formattedString>
+                <span text="Loading.." class="text" />
+            </formattedString>
+        </label>
+    {:else}
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label class="animate-fade-in">
+            <formattedString>
+                <span text="Listening..." class="text text-h2" />
+            </formattedString>
+        </label>
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <textView class="animate-fade-in" >
+            <formattedString>
+                <span text="{result}" textWrap={true} class="text text" />
+            </formattedString>
+        </textView>
+    {/if}
+</stackLayout>
 
 <script type="ts">
 import { onMount, createEventDispatcher } from "svelte";
 
 import { SpeechRecognitionTranscription, SpeechRecognition } from "nativescript-speech-recognition";
 
-import type { GameLevel } from "~/types";
+import type { Game, GameLevel } from "~/types";
+
+import GameNav from '~/components/game-nav.svelte';
 
 export let level:GameLevel;
+export let game:Game;
 
 const dispatch = createEventDispatcher();
 
@@ -69,6 +69,11 @@ const restartListener = async () => {
         }
     );
 }
+
+const stopListener = () => {
+    speechRecognition.stopListening();
+}
+
 onMount(async () => {
     try {
         restartListener();

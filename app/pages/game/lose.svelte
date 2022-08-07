@@ -1,5 +1,5 @@
 <page class="page">
-    <actionBar title="{game.name}" style="text" color="black"/>
+    <actionBar title="{game.name}" color="black"/>
 
     <stackLayout class="my-2 p-1">
         <flexboxLayout flexDirection="column" class="p-1" alignItems="center">

@@ -1,29 +1,12 @@
 <page class="page">
-    <actionBar>
-        <stackLayout class="px-2 mx-2 mb-4" width="100%">
-            <flexboxLayout justifyContent="space-between" width="100%">
-                <!-- svelte-ignore a11y-label-has-associated-control -->
-                <label>
-                    <formattedString>
-                        <span text="{game.name}" class="text text-h2" />
-                    </formattedString>
-                </label>
 
-                {#if !won}
-                    <image src="~/static/close.png" width="24" on:tap={handleClose}/>
-                {/if}
-            </flexboxLayout>
-        </stackLayout>
-    </actionBar>
-
-    <stackLayout class="my-4 p-1">
         <svelte:component
             this={game.component}
             level={game.levels[levelIndex]}
+            game={game}
             on:win={handleWin}
             on:lose={handleLose}
         />
-    </stackLayout>
 </page>
 
 <script type="ts">
@@ -34,7 +17,7 @@ import type { Game } from "~/types";
 
 import Win from "~/pages/game/win.svelte";
 import Lose from "~/pages/game/win.svelte";
-import Home from "~/pages/home.svelte";
+// import GameNav from "~/components/game-nav.svelte";
 
 export let game:Game = GameDefaults;
 export let levelIndex:number;
@@ -67,11 +50,4 @@ const handleLose =  () => navigate({
     }
 });
 
-const handleClose = () => {
-    navigate({
-        // @ts-ignore
-        page: Home,
-        clearHistory: true,
-    });
-}
 </script>

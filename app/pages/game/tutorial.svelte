@@ -1,5 +1,5 @@
 <page class="page">
-    <actionBar title="How To Play" style="text" color="black"/>
+    <actionBar title="How To Play" color="black"/>
 
     <flexboxLayout flexDirection="column" alignItems="center" class="mt-4">
 		<image src="{game.icon}" class="icon-large p-1 my-4" />
