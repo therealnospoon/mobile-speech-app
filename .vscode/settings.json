@@ -1,0 +1,23 @@
+{
+  "editor.tabSize": 4,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    "svelte"
+  ],
+  "editor.codeActionsOnSave": {
+		"source.fixAll.stylelint": true,
+		"source.fixAll.eslint": true,
+  },
+  "cSpell.words": [
+    "APPICON",
+    "ASSETCATALOG",
+    "JYPC",
+    "LAUNCHIMAGE",
+    "Pershouse",
+    "stylelint",
+    "sveltenative",
+    "tivac"
+  ],
+}

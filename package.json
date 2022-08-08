@@ -9,7 +9,8 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/halfnelson/svelte-native-template",
   "scripts": {
-    "build:styles": "sass ./app/styles/main.scss ./app/app.css"
+    "build:styles": "sass ./app/styles/main.scss ./app/app.css",
+    "lint": "eslint app/**/*.svelte app/**/*.ts"
   },
   "dependencies": {
     "@nativescript/core": "~7.0.0",
@@ -23,9 +24,17 @@
     "@nativescript/android": "7.0.0",
     "@nativescript/ios": "8.2.3",
     "@tivac/eslint-config": "^2.4.0",
-    "eslint": "^8.16.0",
-    "eslint-plugin-import": "^2.20.2",
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-svelte3": "^4.0.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-scss": "^4.3.0",
     "svelte": "~3.24.1",
     "svelte-loader-hot": "~0.3.1",
     "svelte-native-preprocessor": "^0.2.0",

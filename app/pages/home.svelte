@@ -6,10 +6,10 @@
 
 		{#each gamesConfig as game}
 			<flexboxLayout class="card my-2" on:tap={() => navigate({
-				page: Tutorial,
+				page  : Tutorial,
 				props : {
 					game,
-				}
+				},
 			})}>
 				<image src="{game.icon}" class="icon p-1" />
 				<stackLayout class="ml-2">
@@ -32,7 +32,7 @@
 </page>
 
 <script>
-	import { navigate } from 'svelte-native';
+	import { navigate } from "svelte-native";
 
 	import gamesConfig from "~/games/games.config";
 	
