@@ -5,16 +5,16 @@
                <!-- svelte-ignore a11y-label-has-associated-control -->
                <label>
                 <formattedString>
-                    <span text="{game.name}" class="text text-h2" />
+                    <span text="{game.name}" class="text text-bold" />
                 </formattedString>
                 </label>
     
-                <image src="~/static/close.png" width="24" on:tap={exit}/>
+                <image src="~/static/close.png" width="18" on:tap={exit}/>
             </flexboxLayout>
         </stackLayout>
     </actionBar>
 
-    <stackLayout class="my-2 p-2">
+    <stackLayout class="my-2 p-2 w-100">
         <flexboxLayout flexDirection="column" alignItems="center">
             {#if game.levels[levelIndex + 1]}
                 <image src="~/static/check.png" width="40%"  />    
@@ -22,7 +22,7 @@
                 <image src="~/static/party.png" width="40%"  />    
             {/if}
 
-            <stackLayout class="my-4 p-1">
+            <stackLayout class="my-4 p-1 w-100">
                 <!-- svelte-ignore a11y-label-has-associated-control -->
                 {#if game.levels[levelIndex + 1]}
                     <label textWrap="{true}">

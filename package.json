@@ -10,12 +10,15 @@
   "repository": "https://github.com/halfnelson/svelte-native-template",
   "scripts": {
     "build:styles": "sass ./app/styles/main.scss ./app/app.css",
-    "lint": "eslint app/**/*.svelte app/**/*.ts"
+    "lint": "eslint app/**/*.svelte app/**/*.ts",
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
+    "@nativescript-community/ui-neumorphiclayout": "^2.0.4",
     "@nativescript/core": "~7.0.0",
     "@nativescript/theme": "~2.3.3",
     "@nativescript/webpack": "3.0.0",
+    "eslint-import-resolver-typescript": "^3.4.0",
     "nativescript-speech-recognition": "^2.0.0",
     "sass": "^1.54.0",
     "svelte-native": "~0.9.1"

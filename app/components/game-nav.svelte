@@ -5,18 +5,19 @@
             <!-- svelte-ignore a11y-label-has-associated-control -->
             <label>
                 <formattedString>
-                    <span text="{game.name}" class="text text-h2" />
+                    <span text="{game.name}" class="text text-bold" />
                 </formattedString>
             </label>
-            <image src="~/static/close.png" width="24" on:tap={handleClose}/>
+            <image src="~/static/close.png" width="18" on:tap={handleClose}/>
         </flexboxLayout>
     </stackLayout>
 </actionBar>
 
 <script type="ts">
+    import type { Game } from "~/types";
+
     import { navigate } from 'svelte-native';
     import { GameDefaults } from '~/defaults';
-    import type { Game } from "~/types";
 
     import Home from "~/pages/home.svelte";
 
