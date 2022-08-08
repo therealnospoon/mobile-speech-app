@@ -3,7 +3,7 @@
 
     <stackLayout class="my-2 p-1">
         <flexboxLayout flexDirection="column" class="p-1" alignItems="center">
-            <image src="~/static/warning.png" width="50%"  />
+            <Icon path="~/static/warning.png" size="large" />
     
             <!-- svelte-ignore a11y-label-has-associated-control -->
             <label textWrap="{true}">
@@ -44,6 +44,7 @@ import type { Game } from "~/types";
 
 import Play from "~/pages/game/play.svelte";
 import Home from "~/pages/home.svelte";
+import Icon from "~/components/icon.svelte";
 
 export let game:Game = GameDefaults;
 export let levelIndex:number;

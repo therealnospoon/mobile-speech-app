@@ -2,7 +2,7 @@
     <actionBar title="{name}" style="text" color="black"/>
 
     <flexboxLayout flexDirection="column" class="p-1">
-		<image src="{icon}" class="icon-large p-1 my-2" />
+		<Icon path="{icon}" size="large" customClass="my-2" />
 
 		<stackLayout class="my-2 p-1">
 			<!-- svelte-ignore a11y-label-has-associated-control -->
@@ -29,6 +29,8 @@ import { navigate } from 'svelte-native';
 
 import { GameDefaults } from '~/defaults';
 import type { Game } from "~/types";
+
+import Icon from "~/components/icon.svelte";
 
 export let game:Game;
 

@@ -8,8 +8,9 @@
                     <span text="{game.name}" class="text text-h2" />
                 </formattedString>
                 </label>
-    
-                <image src="~/static/close.png" width="24" on:tap={exit}/>
+                <stackLayout on:tap={exit}>
+                    <Icon path="~/static/close.png" size="medium" />
+                </stackLayout>
             </flexboxLayout>
         </stackLayout>
     </actionBar>
@@ -17,9 +18,9 @@
     <stackLayout class="my-2 p-2">
         <flexboxLayout flexDirection="column" alignItems="center">
             {#if game.levels[levelIndex + 1]}
-                <image src="~/static/check.png" width="40%"  />    
+                <Icon path="~/static/check.png" size="large"  />    
             {:else}
-                <image src="~/static/party.png" width="40%"  />    
+                <Icon path="~/static/party.png" size="large"  />    
             {/if}
 
             <stackLayout class="my-4 p-1">
@@ -79,6 +80,7 @@ import type { Game } from "~/types";
 
 import Play from "~/pages/game/play.svelte";
 import Home from "~/pages/home.svelte";
+import Icon from "~/components/icon.svelte";
 
 export let game:Game = GameDefaults;
 export let levelIndex:number;

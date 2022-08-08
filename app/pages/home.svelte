@@ -11,7 +11,7 @@
 					game,
 				}
 			})}>
-				<image src="{game.icon}" class="icon p-1" />
+				<Icon path="{game.icon}" size="medium"/>
 				<stackLayout class="ml-2">
 					<!-- svelte-ignore a11y-label-has-associated-control -->
 					<label textWrap="{true}">
@@ -38,4 +38,6 @@
 	
 	import Nav from "~/components/top-nav.svelte";
 	import Tutorial from "~/pages/game/tutorial.svelte";
+
+	import Icon from "~/components/icon.svelte";
 </script>

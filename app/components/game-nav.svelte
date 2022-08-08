@@ -8,7 +8,9 @@
                     <span text="{game.name}" class="text text-h2" />
                 </formattedString>
             </label>
-            <image src="~/static/close.png" width="24" on:tap={handleClose}/>
+            <stackLayout on:tap={handleClose}>
+                <Icon path="~/static/close.png" size="medium" />
+            </stackLayout>
         </flexboxLayout>
     </stackLayout>
 </actionBar>
@@ -19,6 +21,7 @@
     import type { Game } from "~/types";
 
     import Home from "~/pages/home.svelte";
+    import Icon from "~/components/icon.svelte";
 
     export let game:Game = GameDefaults;
     export let onClose = () => null; 

@@ -1,5 +1,9 @@
 <flexboxLayout justifyContent="space-between" class="nav">
-	<image src="~/static/pfp.png" width="45"/>
+    <Icon path="~/static/pfp.png" size="medium"/>
     <label title="S2M" class="text" />
-    <image src="~/static/notify.png" width="35"/>
+    <Icon path="~/static/notify.png" size="medium"/>
 </flexboxLayout>
+
+<script>
+    import Icon from "~/components/icon.svelte";
+</script>

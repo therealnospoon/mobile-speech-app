@@ -409,11 +409,15 @@ The imported CSS rules must precede all other types of rules.
 }
 
 .icon {
-  width: 100px;
+  width: 24px;
+  height: auto;
+  padding: 16px;
 }
-
-.icon-large {
-  width: 350px;
+.icon.medium {
+  width: 35px;
+}
+.icon.large {
+  width: 60px;
 }
 
 .border {
