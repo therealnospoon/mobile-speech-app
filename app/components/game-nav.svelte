@@ -5,7 +5,7 @@
             <!-- svelte-ignore a11y-label-has-associated-control -->
             <label>
                 <formattedString>
-                    <span text="{game.name}" class="text text-h2" />
+                    <span text="{game.name}" class="text text-bold" />
                 </formattedString>
             </label>
             <stackLayout on:tap={handleClose}>
@@ -16,9 +16,10 @@
 </actionBar>
 
 <script type="ts">
+    import type { Game } from "~/types";
+
     import { navigate } from 'svelte-native';
     import { GameDefaults } from '~/defaults';
-    import type { Game } from "~/types";
 
     import Home from "~/pages/home.svelte";
     import Icon from "~/components/icon.svelte";

@@ -5,7 +5,7 @@
                <!-- svelte-ignore a11y-label-has-associated-control -->
                <label>
                 <formattedString>
-                    <span text="{game.name}" class="text text-h2" />
+                    <span text="{game.name}" class="text text-bold" />
                 </formattedString>
                 </label>
                 <stackLayout on:tap={exit}>
@@ -15,7 +15,7 @@
         </stackLayout>
     </actionBar>
 
-    <stackLayout class="my-2 p-2">
+    <stackLayout class="my-2 p-2 w-100">
         <flexboxLayout flexDirection="column" alignItems="center">
             {#if game.levels[levelIndex + 1]}
                 <Icon name="check" size="large"  />    
@@ -23,7 +23,7 @@
                 <Icon name="party" size="large"  />    
             {/if}
 
-            <stackLayout class="my-4 p-1">
+            <stackLayout class="my-4 p-1 w-100">
                 <!-- svelte-ignore a11y-label-has-associated-control -->
                 {#if game.levels[levelIndex + 1]}
                     <label textWrap="{true}">

@@ -1,12 +1,11 @@
 <page class="page">
-
-        <svelte:component
-            this={game.component}
-            level={game.levels[levelIndex]}
-            game={game}
-            on:win={handleWin}
-            on:lose={handleLose}
-        />
+    <svelte:component
+        this={game.component}
+        level={game.levels[levelIndex]}
+        game={game}
+        on:win={handleWin}
+        on:lose={handleLose}
+    />
 </page>
 
 <script type="ts">
@@ -17,7 +16,6 @@ import type { Game } from "~/types";
 
 import Win from "~/pages/game/win.svelte";
 import Lose from "~/pages/game/win.svelte";
-// import GameNav from "~/components/game-nav.svelte";
 
 export let game:Game = GameDefaults;
 export let levelIndex:number;
