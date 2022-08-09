@@ -1,15 +1,14 @@
 <page class="page">
     <actionBar>
         <stackLayout class="px-2 mx-2 mb-4" width="100%">
-            <flexboxLayout justifyContent="space-between" width="100%">
+            <flexboxLayout justifyContent="space-between" alignItems="center" width="100%">
                <!-- svelte-ignore a11y-label-has-associated-control -->
                <label>
                 <formattedString>
                     <span text="{game.name}" class="text text-bold" />
                 </formattedString>
                 </label>
-    
-                <image src="~/static/close.png" width="18" on:tap={exit}/>
+                <Icon name="close" onTap="{exit}" />
             </flexboxLayout>
         </stackLayout>
     </actionBar>
@@ -17,9 +16,9 @@
     <stackLayout class="my-2 p-2 w-100">
         <flexboxLayout flexDirection="column" alignItems="center">
             {#if game.levels[levelIndex + 1]}
-                <image src="~/static/check.png" width="40%"  />    
+                <Icon name="check" size="large"  />    
             {:else}
-                <image src="~/static/party.png" width="40%"  />    
+                <Icon name="party" size="large"  />    
             {/if}
 
             <stackLayout class="my-4 p-1 w-100">
@@ -79,6 +78,7 @@ import type { Game } from "~/types";
 
 import Play from "~/pages/game/play.svelte";
 import Home from "~/pages/home.svelte";
+import Icon from "~/components/icon.svelte";
 
 export let game:Game = GameDefaults;
 export let levelIndex:number;

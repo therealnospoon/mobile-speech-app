@@ -1,6 +1,9 @@
 <flexboxLayout justifyContent="space-between" class="nav">
-	<image src="~/static/pfp.png" width="45"/>
-    <!-- svelte-ignore a11y-label-has-associated-control -->
+    <Icon name="pfp" size="medium"/>
     <label title="S2M" class="text" />
-    <image src="~/static/notify.png" width="35"/>
+    <Icon name="notify" size="medium"/>
 </flexboxLayout>
+
+<script>
+    import Icon from "~/components/icon.svelte";
+</script>

@@ -28,7 +28,7 @@
 					},
 				})}
 			>
-				<image src="{game.icon}" class="icon p-1" />
+				<Icon name="{game.icon}" size="medium" />
 
 				<stackLayout class="ml-2">
 					<!-- svelte-ignore a11y-label-has-associated-control -->
@@ -55,7 +55,7 @@
 			cornerRadius="10"
 		>
 			<stackLayout class="w-100">
-				<flexboxLayout justifycontent="py-4 w-100">
+				<flexboxLayout class="py-1">
 					<image src="~/static/jane-doe.png" width="65"/>
 					
 					<stackLayout class="ml-3">
@@ -74,7 +74,7 @@
 					</stackLayout>
 				</flexboxLayout>
 				<stackLayout class="w-100 pt-2">
-					<flexboxLayout justifycontent="space-between w-100">
+					<flexboxLayout justifyContent="space-between">
 						<button
 							text="Call"
 							class="button"
@@ -103,5 +103,7 @@
 	import gamesConfig from "~/games/games.config";
 
 	import Tutorial from "~/pages/game/tutorial.svelte";
+
+	import Icon from "~/components/icon.svelte";
 </script>
 

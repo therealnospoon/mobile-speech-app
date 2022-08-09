@@ -3,7 +3,7 @@
 
     <stackLayout class="my-2 p-1">
         <flexboxLayout flexDirection="column" class="p-1" alignItems="center">
-            <image src="~/static/warning.png" width="50%"  />
+            <Icon name="warning" size="large" />
     
             <!-- svelte-ignore a11y-label-has-associated-control -->
             <label textWrap="{true}">
@@ -11,6 +11,7 @@
                     <span text="Incorrect" class="text text-h2" />
                 </formattedString>
             </label>
+            <!-- svelte-ignore a11y-label-has-associated-control -->
             <label textWrap="{true}">
                 <formattedString>   
                     <span text="Looks like that wasn't quite right, want to try again?" class="text" />
@@ -44,6 +45,7 @@ import type { Game } from "~/types";
 
 import Play from "~/pages/game/play.svelte";
 import Home from "~/pages/home.svelte";
+import Icon from "~/components/icon.svelte";
 
 export let game:Game = GameDefaults;
 export let levelIndex:number;

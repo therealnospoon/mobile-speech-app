@@ -1,6 +1,6 @@
 <actionBar>
     <stackLayout class="px-2 mx-2 mb-4" width="100%">
-        <flexboxLayout justifyContent="space-between" width="100%">
+        <flexboxLayout justifyContent="space-between" alignItems="center" width="100%">
            
             <!-- svelte-ignore a11y-label-has-associated-control -->
             <label>
@@ -8,7 +8,7 @@
                     <span text="{game.name}" class="text text-bold" />
                 </formattedString>
             </label>
-            <image src="~/static/close.png" width="18" on:tap={handleClose}/>
+                <Icon name="close" onTap="{handleClose}"/>
         </flexboxLayout>
     </stackLayout>
 </actionBar>
@@ -20,9 +20,10 @@
     import { GameDefaults } from '~/defaults';
 
     import Home from "~/pages/home.svelte";
+    import Icon from "~/components/icon.svelte";
 
     export let game:Game = GameDefaults;
-    export let onClose = () => null; 
+    export let onClose = () => null;
 
     const handleClose = () => {
         onClose();

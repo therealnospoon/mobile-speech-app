@@ -1,8 +1,13 @@
 .icon {
-    width: 100px;
-    height: 100px;
-}
+    width: 24px;
+    height: auto;
+    padding: 16px;
 
-.icon-large {
-    width: 350px;
+    &.medium {
+        width: 35px;
+    }
+
+    &.large {
+        width: 60px;
+    }
 }
