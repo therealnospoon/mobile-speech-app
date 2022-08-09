@@ -55,7 +55,7 @@
 			cornerRadius="10"
 		>
 			<stackLayout class="w-100">
-				<flexboxLayout justifycontent="py-4 w-100">
+				<flexboxLayout class="py-1">
 					<image src="~/static/jane-doe.png" width="65"/>
 					
 					<stackLayout class="ml-3">
@@ -74,7 +74,7 @@
 					</stackLayout>
 				</flexboxLayout>
 				<stackLayout class="w-100 pt-2">
-					<flexboxLayout justifycontent="space-between w-100">
+					<flexboxLayout justifyContent="space-between">
 						<button
 							text="Call"
 							class="button"

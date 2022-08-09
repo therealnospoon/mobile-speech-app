@@ -424,9 +424,8 @@ The imported CSS rules must precede all other types of rules.
 }
 
 .icon {
-  width: 64px;
+  width: 48px;
   height: auto;
-  padding: 16px;
 }
 .icon[data-size="medium"] {
   width: 100px;
@@ -434,7 +433,7 @@ The imported CSS rules must precede all other types of rules.
 }
 
 .icon[data-size="large"] {
-  width: 250px;
+  width: 350px;
 }
 
 .icon[data-scale="up"] {

@@ -1,16 +1,14 @@
 <page class="page">
     <actionBar>
         <stackLayout class="px-2 mx-2 mb-4" width="100%">
-            <flexboxLayout justifyContent="space-between" width="100%">
+            <flexboxLayout justifyContent="space-between" alignItems="center" width="100%">
                <!-- svelte-ignore a11y-label-has-associated-control -->
                <label>
                 <formattedString>
                     <span text="{game.name}" class="text text-bold" />
                 </formattedString>
                 </label>
-                <stackLayout on:tap={exit}>
-                    <Icon name="close" size="medium" />
-                </stackLayout>
+                <Icon name="close" onTap="{exit}" />
             </flexboxLayout>
         </stackLayout>
     </actionBar>
