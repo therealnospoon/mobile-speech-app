@@ -4,7 +4,7 @@ import Speech from "~/games/speech/speech.svelte";
 
 const config:Game = {
     name: "Speak",
-    icon: "~/static/speech.png",
+    icon: "speech",
     description: "Say words as they appear.",
     component: Speech,
     tutorial: {

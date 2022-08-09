@@ -2,7 +2,7 @@
     <actionBar title="{name}" style="text" color="black"/>
 
     <flexboxLayout flexDirection="column" class="p-1">
-		<Icon path="{icon}" size="large" customClass="my-2" />
+		<Icon name="{icon}" size="large" customClass="my-2" />
 
 		<stackLayout class="my-2 p-1">
 			<!-- svelte-ignore a11y-label-has-associated-control -->

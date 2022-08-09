@@ -9,7 +9,7 @@
                 </formattedString>
             </label>
             <stackLayout on:tap={handleClose}>
-                <Icon path="~/static/close.png" size="medium" />
+                <Icon name="close" size="medium" />
             </stackLayout>
         </flexboxLayout>
     </stackLayout>

@@ -11,7 +11,7 @@
 					game,
 				}
 			})}>
-				<Icon path="{game.icon}" size="medium" />
+				<Icon name="{game.icon}" size="medium" />
 				<stackLayout class="ml-2">
 					<!-- svelte-ignore a11y-label-has-associated-control -->
 					<label textWrap="{true}">

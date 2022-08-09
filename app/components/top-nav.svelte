@@ -1,7 +1,7 @@
 <flexboxLayout justifyContent="space-between" class="nav">
-    <Icon path="~/static/pfp.png" size="medium"/>
+    <Icon name="pfp" size="medium"/>
     <label title="S2M" class="text" />
-    <Icon path="~/static/notify.png" size="medium"/>
+    <Icon name="notify" size="medium"/>
 </flexboxLayout>
 
 <script>

@@ -2,12 +2,14 @@
     class="icon {customClass}"
     data-size="{size}"
     data-scale="{scale}"
-    src="{path}"
+    src="~/static/icons/{name}.png"
 />
 
 <script>
-    export let path;
+    export let name;
     export let customClass = "";
     export let size = "";
     export let scale = ""; // Using this property scales up or scales down icon size by 5% depending on which value used ('up' or 'down');
+
+
 </script>
