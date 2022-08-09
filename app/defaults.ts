@@ -1,25 +1,25 @@
-import { Game } from "~/types"
+import { Game } from "~/types";
 
 const GameDefaults:Game = {
-    name: "",
-    icon: "",
-    description: "",
-    component: false,
-    tutorial: {
-        media: {
-            type: "image",
-            src: "",
+    name        : "",
+    icon        : "",
+    description : "",
+    component   : false,
+    tutorial    : {
+        media : {
+            type : "image",
+            src  : "",
         },
-        instructions: "",
+        instructions : "",
     },
-    levels: [
+    levels : [
         {
-            timeLimit: false,
-            config: {} 
+            timeLimit : false,
+            config    : {},
         },
-    ]
-}
+    ],
+};
 
 export {
-    GameDefaults
-}
+    GameDefaults,
+};

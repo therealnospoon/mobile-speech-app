@@ -16,6 +16,19 @@
     }
 }
 
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0);
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+
 .animate-flip {
     animation-name: flip-card;
     animation-duration: 750ms;
@@ -25,5 +38,12 @@
 .animate-fade-in {
     animation-name: fade-in;
     animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.animate-fade-up {
+    opacity: 0;
+    animation-name: fadeInUp;
+    animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
