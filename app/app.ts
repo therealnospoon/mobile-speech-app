@@ -6,7 +6,7 @@ purpose of the file is to pass control to the app’s first module.
 
 import { svelteNative } from "svelte-native";
 
-import '@nativescript-community/ui-neumorphiclayout';
+import "@nativescript-community/ui-neumorphiclayout";
 
 import App from "./pages/home.svelte";
 
