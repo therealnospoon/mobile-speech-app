@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core'
 
 export default {
-  id: 'technology.sveltenative.template',
+  id: 'org.speak2m2.mobile',
   appResourcesPath: 'app/App_Resources',
   android: {
     v8Flags: '--expose_gc',

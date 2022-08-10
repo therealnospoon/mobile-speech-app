@@ -272,3 +272,12 @@ Each level must have a `timeLimit` and `config` property. The `config` property 
     const handleWin = () => dispatch("win");
 </script>
 ```
+
+# Deploy
+Deploy the most recent version of the app to TestFlight. Make sure you have deploy permissions.
+1. Checkout `git checkout main` and `git pull`.
+2. Build the native script project. You can do this with `ns build ios` or utilizing `ns run ios` and using a simulator or your phone. You just need the project to generate fresh XCode files one way or another.
+3. Once a build has happened, open `./platforms/ios/s2mmobile.xcworkspace` in XCode. Double check and verify in XCode the app "Display Name", "Bundle Identifier" and "Version" look as expected.
+4. Archive the current files. In the top menu navigate to Product > Archive.
+5. Once Archive is complete, you'll get a pop up of recent archives. Select the latest and click "Distribute App".
+6. If distribute was a success, you should be able to view the new version in [Apple Connect](https://appstoreconnect.apple.com/). Once it finishes processing it will show up in TestFlight.
