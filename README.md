@@ -272,6 +272,45 @@ Each level must have a `timeLimit` and `config` property. The `config` property 
     const handleWin = () => dispatch("win");
 </script>
 ```
+### Using Voice-To-Text
+Some games require utilizing iOS voice-to-text feature. This can easily be implemented by using the 'Voice Store' in your game component. See below for example of current usage in a game component that requires voice-to-text:
+```html
+<page class="page">
+    <!-- use the onClose prop for GameNav to pass in stopSpeechListener function so it can run when closing the game from GameNav component -->
+    <GameNav onClose="{stopSpeechListener}"/>
+
+    <!-- Other game template here -->
+</page>
+<script type="ts">
+    import { onMount } from "svelte";
+
+    import type { GameLevel } from "~/types";
+    
+    import createSpeechListener from "~/stores/voice-store.js";
+
+    import GameNav from "~/components/game-nav.svelte"
+
+    // The current level
+    export let level:GameLevel;
+
+    const {
+        speechStore, // Store that contains text from the SpeechRecognition module
+        startSpeechListener, // Function that tells SpeechRecognition instance to begin listening for audio input;
+        stopSpeechListener, // Function that stops SpeechRecognition instance to stop listening;
+    } = createSpeechListener();
+
+    onMount(() => {
+        try {
+            startSpeechListener();
+        } catch (error) {
+            console.log(error);
+        }
+    });
+
+    // End the game
+    const handleWin = () => dispatch("win");
+</script>
+```
 
 # Deploy
 Deploy the most recent version of the app to TestFlight. Make sure you have deploy permissions.
