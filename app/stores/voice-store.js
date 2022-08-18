@@ -10,9 +10,7 @@ const createSpeechListener = () => {
     
         await speechRecognition.requestPermission()
     
-        let isReady = false;
-       
-        isReady = await speechRecognition.available();
+        await speechRecognition.available();
     
         await speechRecognition.startListening(
             {
