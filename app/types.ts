@@ -18,6 +18,7 @@ export interface Game {
     description: string,
     component: any,
     tutorial: GameTutorial,
+    subLevels: boolean,
     levels : Array<GameLevel>
 }
 

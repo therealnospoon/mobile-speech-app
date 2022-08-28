@@ -12,6 +12,7 @@ const GameDefaults:Game = {
         },
         instructions : "",
     },
+    subLevels: false,
     levels : [
         {
             timeLimit : false,

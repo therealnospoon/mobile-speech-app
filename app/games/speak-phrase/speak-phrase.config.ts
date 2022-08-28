@@ -14,6 +14,7 @@ const config:Game = {
         },
         instructions: "Try your best to say the given phrases completely and accurately.",
     },
+    subLevels: false,
     levels: [
         {
             timeLimit: 15,

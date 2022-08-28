@@ -2,6 +2,7 @@
     <svelte:component
         this={game.component}
         level={game.levels[levelIndex]}
+        subLevels={game.subLevels ? game.levels[levelIndex].config.subLevels : null}
         game={game}
         on:win={handleWin}
         on:lose={handleLose}

@@ -14,6 +14,7 @@ const config:Game = {
         },
         instructions: "Match the image with the corresponding word and image above.",
     },
+    subLevels: false,
     levels: [
         {
             timeLimit: false,

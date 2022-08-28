@@ -14,6 +14,7 @@ const config:Game = {
         },
         instructions: "Try your best to say the given word as accurately as possible.",
     },
+    subLevels: false,
     levels: [
         {
             timeLimit: 15,

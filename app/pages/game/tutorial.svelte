@@ -45,7 +45,7 @@ const launchGame = () => navigate({
 	clearHistory: true,
     props : {
         game,
-        levelIndex: 0,
+        levelIndex: 0
     }
 });
 </script>
