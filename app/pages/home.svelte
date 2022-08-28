@@ -11,90 +11,92 @@
 			<image src="~/static/settings.png" width="75px" />
 		</flexboxLayout>
 	</actionBar>
+	<scrollView orientation="vertical">
 
-	<stackLayout class="mt-4 animate-fade-up">
-		{#each gamesConfig as game}
-			<flexboxLayout
-				class="card my-2"
-				neumorphism="flat"
-				fillColor="#ffffff"
-				lightShadowColor="#ffffff"
-				darkShadowColor="#bebfc1"
-				cornerRadius="10"	
-				on:tap={() => navigate({
-					page  : Tutorial,
-					props : {
-						game,
-					},
-				})}
-			>
-				<Icon name="{game.icon}" size="medium" />
-
-				<stackLayout class="ml-2">
-					<!-- svelte-ignore a11y-label-has-associated-control -->
-					<label textWrap="{true}">
-						<formattedString>
-							<span text="{game.name}" textWrap="{true}" class="text text-h3" />
-						</formattedString>
-					</label>
-					<!-- svelte-ignore a11y-label-has-associated-control -->
-					<label>
-						<formattedString>
-							<span text="{game.description}" textWrap="{true}" class="text text-faint mr-1" />
-						</formattedString>
-					</label>
-				</stackLayout>
-			</flexboxLayout>
-		{/each}
-		<flexboxLayout
-			class="card mt-2"
-			neumorphism="flat"
-			fillColor="#ffffff"
-			lightShadowColor="#ffffff"
-			darkShadowColor="#bebfc1"
-			cornerRadius="10"
-		>
-			<stackLayout class="w-100">
-				<flexboxLayout class="py-1">
-					<image src="~/static/jane-doe.png" width="65"/>
-					
-					<stackLayout class="ml-3">
+		<stackLayout class="mt-4 animate-fade-up">
+			{#each gamesConfig as game}
+				<flexboxLayout
+					class="card my-2"
+					neumorphism="flat"
+					fillColor="#ffffff"
+					lightShadowColor="#ffffff"
+					darkShadowColor="#bebfc1"
+					cornerRadius="10"	
+					on:tap={() => navigate({
+						page  : Tutorial,
+						props : {
+							game,
+						},
+					})}
+				>
+					<Icon name="{game.icon}" size="medium" />
+	
+					<stackLayout class="ml-2">
 						<!-- svelte-ignore a11y-label-has-associated-control -->
 						<label textWrap="{true}">
 							<formattedString>
-								<span text="Dr. Jane Doe" textWrap="{true}" class="text text-h2" />
+								<span text="{game.name}" textWrap="{true}" class="text text-h3" />
 							</formattedString>
 						</label>
 						<!-- svelte-ignore a11y-label-has-associated-control -->
-						<label textWrap="{true}">
+						<label>
 							<formattedString>
-								<span text="Feel free to contact me with any questions." textWrap="{true}" class="text" />
+								<span text="{game.description}" textWrap="{true}" class="text text-faint mr-1" />
 							</formattedString>
 						</label>
 					</stackLayout>
 				</flexboxLayout>
-				<stackLayout class="w-100 pt-2">
-					<flexboxLayout justifyContent="space-between">
-						<button
-							text="Call"
-							class="button"
-							width="30%"
-						/>
-						<button
-							text="Text"
-							class="button mx-3"
-							width="30%"
-						/>
-						<button
-							text="Email"
-							class="button"
-							width="30%"
-						/>
+			{/each}
+			<flexboxLayout
+				class="card mt-2"
+				neumorphism="flat"
+				fillColor="#ffffff"
+				lightShadowColor="#ffffff"
+				darkShadowColor="#bebfc1"
+				cornerRadius="10"
+			>
+				<stackLayout class="w-100">
+					<flexboxLayout class="py-1">
+						<image src="~/static/jane-doe.png" width="65"/>
+						
+						<stackLayout class="ml-3">
+							<!-- svelte-ignore a11y-label-has-associated-control -->
+							<label textWrap="{true}">
+								<formattedString>
+									<span text="Dr. Jane Doe" textWrap="{true}" class="text text-h2" />
+								</formattedString>
+							</label>
+							<!-- svelte-ignore a11y-label-has-associated-control -->
+							<label textWrap="{true}">
+								<formattedString>
+									<span text="Feel free to contact me with any questions." textWrap="{true}" class="text" />
+								</formattedString>
+							</label>
+						</stackLayout>
 					</flexboxLayout>
+					<stackLayout class="w-100 pt-2">
+						<flexboxLayout justifyContent="space-between">
+							<button
+								text="Call"
+								class="button"
+								width="30%"
+							/>
+							<button
+								text="Text"
+								class="button mx-3"
+								width="30%"
+							/>
+							<button
+								text="Email"
+								class="button"
+								width="30%"
+							/>
+						</flexboxLayout>
+					</stackLayout>
 				</stackLayout>
-			</stackLayout>
-		</flexboxLayout>
-	</stackLayout>
+			</flexboxLayout>
+		</stackLayout>
+	</scrollView>
 </page>
 
 <script>
