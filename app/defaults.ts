@@ -1,4 +1,4 @@
-import { Game } from "~/types";
+import { Game, GameLevel } from "~/types";
 
 const GameDefaults:Game = {
     name        : "",
@@ -12,11 +12,12 @@ const GameDefaults:Game = {
         },
         instructions : "",
     },
-    subLevels: false,
     levels : [
         {
             timeLimit : false,
-            config    : {},
+            config    : {
+                subLevel : [],
+            },
         },
     ],
 };

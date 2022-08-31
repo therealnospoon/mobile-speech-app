@@ -90,6 +90,7 @@ const nextLevel = () => navigate({
     props : {
         game,
         levelIndex: levelIndex + 1,
+        subLevelIndex: 0,
     }
 });
 

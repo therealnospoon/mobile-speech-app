@@ -9,7 +9,7 @@
         >
             <formattedString>
                 <span
-                    text="Question {subLevelIndex + 1} of {subLevels.length}"
+                    text="Question {subLevelIndex + 1} of {game.levels[levelIndex].config.subLevels.length}"
                     class="text text-h3"
                 />
             </formattedString>
@@ -24,7 +24,7 @@
         >
             <formattedString>
                 <span
-                    text="{subLevels[subLevelIndex].question}"
+                    text="{level.config.question}"
                     class="text text-h2"
                 />
             </formattedString>
@@ -76,8 +76,8 @@
 		{/if}
 	</flexboxLayout>
 	<flexboxLayout flexWrap="wrap" justifycontent="center">
-		{#each subLevels[subLevelIndex].options as card, idx}
-            {#if subLevels[subLevelIndex].format !== "words"}
+		{#each level.config.options as card, idx}
+            {#if level.config.format !== "words"}
                 <stackLayout class="p-1 animate-fade-up" width="49%" height="400px">
                     <flexboxLayout
                         class="card"
@@ -128,11 +128,11 @@ import type { Game, GameLevel } from "~/types";
 import GameNav from '~/components/game-nav.svelte';
 
 export let level:GameLevel;
-export let subLevels = [];
 
 export let game:Game;
 
-let subLevelIndex = 0;
+export let levelIndex;
+export let subLevelIndex;
 
 let successIndex:number = -1;
 let incorrectIndex:number = -1;
@@ -144,18 +144,10 @@ let incorrectIndex:number = -1;
 			return;
 		}
 
-		if(card === subLevels[subLevelIndex].answer) {
+		if(card === level.config.answer) {
 			successIndex = idx;
 
-            if(subLevels[subLevelIndex + 1]) {
-                setTimeout(() => {
-                    subLevelIndex += 1;
-                    successIndex = -1;
-                }, 1000)
-            } else {
-                dispatch("win");
-            }
-
+            dispatch("win")
 		} else {
 			incorrectIndex = idx;
 

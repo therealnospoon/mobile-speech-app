@@ -14,7 +14,6 @@ const config:Game = {
         },
         instructions: "Say the name of the pictured object.",
     },
-    subLevels: false,
     levels: [
         {
             timeLimit: false,

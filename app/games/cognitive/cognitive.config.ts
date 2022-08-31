@@ -14,7 +14,6 @@ const config:Game = {
         },
         instructions: "Click tiles to flip them over and reveal what's underneath. You can only flip over two tiles at once, and matched pairs will remain flipped over.",
     },
-    subLevels: false,
     levels: [
         {
             timeLimit: 15,
