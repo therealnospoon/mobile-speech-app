@@ -1,4 +1,4 @@
-import { Game } from "~/types";
+import { Game, GameLevel } from "~/types";
 
 const GameDefaults:Game = {
     name        : "",
