@@ -46,7 +46,6 @@ const launchGame = () => navigate({
     props : {
         game,
         levelIndex: 0,
-		subLevelIndex: 0,
     }
 });
 </script>

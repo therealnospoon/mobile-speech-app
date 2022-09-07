@@ -15,9 +15,7 @@ const GameDefaults:Game = {
     levels : [
         {
             timeLimit : false,
-            config    : {
-                subLevel : [],
-            },
+            config    : {},
         },
     ],
 };

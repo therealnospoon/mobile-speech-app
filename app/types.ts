@@ -9,6 +9,7 @@ export interface GameTutorial {
 
 export interface GameLevel {
     timeLimit: number | boolean,
+    subLevels?: Array<GameLevel>,
     config: Record<string, any>
 }
 

@@ -9,7 +9,7 @@
         >
             <formattedString>
                 <span
-                    text="Question {subLevelIndex + 1} of {game.levels[levelIndex].subLevels.length}"
+                    text="Question {subLevelIndex + 1} of {game.levels[levelIndex].config.subLevels.length}"
                     class="text text-h3"
                 />
             </formattedString>
@@ -77,45 +77,24 @@
 	</flexboxLayout>
 	<flexboxLayout flexWrap="wrap" justifycontent="center">
 		{#each level.config.options as card, idx}
-            {#if level.config.format !== "words"}
-                <stackLayout class="p-1 animate-fade-up" width="49%" height="400px">
-                    <flexboxLayout
-                        class="card"
-                        class:border-thick={successIndex === idx || incorrectIndex === idx}
-                        class:border-green={successIndex === idx}
-                        class:border-orange={incorrectIndex === idx}
-                        height="100%"
-                        justifyContent="center"
-                        on:tap={() => handleCard(card, idx)}
-                    >
-                        <!-- svelte-ignore a11y-label-has-associated-control -->
-                        <label>
-                            <formattedString>
-                                <span text="{card}" class="text text-h1" />
-                            </formattedString>
-                        </label>	
-                    </flexboxLayout>
-                </stackLayout>
-            {:else}
-                <stackLayout class="p-1 animate-fade-up" width="100%" height="200px">
-                    <flexboxLayout
-                        class="card"
-                        class:border-thick={successIndex === idx || incorrectIndex === idx}
-                        class:border-green={successIndex === idx}
-                        class:border-orange={incorrectIndex === idx}
-                        height="100%"
-                        justifyContent="center"
-                        on:tap={() => handleCard(card, idx)}
-                    >
-                        <!-- svelte-ignore a11y-label-has-associated-control -->
-                        <label>
-                            <formattedString>
-                                <span text="{card}" class="text text-h2" />
-                            </formattedString>
-                        </label>	
-                    </flexboxLayout>
-                </stackLayout>
-            {/if}
+            <stackLayout class="p-1 animate-fade-up" width="49%" height="400px">
+                <flexboxLayout
+                    class="card"
+                    class:border-thick={successIndex === idx || incorrectIndex === idx}
+                    class:border-green={successIndex === idx}
+                    class:border-orange={incorrectIndex === idx}
+                    height="100%"
+                    justifyContent="center"
+                    on:tap={() => handleCard(card, idx)}
+                >
+                    <!-- svelte-ignore a11y-label-has-associated-control -->
+                    <label>
+                        <formattedString>
+                            <span text="{card}" class="text text-huge" />
+                        </formattedString>
+                    </label>	
+                </flexboxLayout>
+            </stackLayout>
 		{/each}
 	</flexboxLayout>
 </stackLayout>
