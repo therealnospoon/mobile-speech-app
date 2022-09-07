@@ -9,7 +9,7 @@
         >
             <formattedString>
                 <span
-                    text="Question {subLevelIndex + 1} of {game.levels[levelIndex].config.subLevels.length}"
+                    text="Question {subLevelIndex + 1} of {game.levels[levelIndex].subLevels.length}"
                     class="text text-h3"
                 />
             </formattedString>
