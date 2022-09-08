@@ -12,7 +12,7 @@
                 <formattedString>
                     <span
                         text="{level.config.picture}"
-                        class="text text-huge text-light"
+                        class="text text-huge"
                     />
                 </formattedString>
             </label>
@@ -26,7 +26,7 @@
                 <formattedString>
                     <span
                         text="Try again"
-                        class="text text-h1 text-light"
+                        class="text-h1-light"
                     />
                 </formattedString>
             </label>

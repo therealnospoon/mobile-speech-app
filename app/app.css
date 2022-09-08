@@ -388,6 +388,25 @@ The imported CSS rules must precede all other types of rules.
   font-weight: 800;
 }
 
+.text-h1-light {
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.text-h2-light {
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.text-h3-light {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 800;
+}
+
 .button {
   border-radius: 10;
   color: white;
@@ -427,21 +446,22 @@ The imported CSS rules must precede all other types of rules.
   width: 48px;
   height: auto;
 }
-.icon[data-size="medium"] {
+
+.icon[data-size=medium] {
   width: 100px;
   height: 100px;
 }
 
-.icon[data-size="large"] {
+.icon[data-size=large] {
   width: 350px;
 }
 
-.icon[data-scale="up"] {
+.icon[data-scale=up] {
   transform: scale(1.05);
 }
 
-.icon[data-scale="down"] {
-  transform: scale(.95);
+.icon[data-scale=down] {
+  transform: scale(0.95);
 }
 
 .border {
@@ -471,11 +491,11 @@ The imported CSS rules must precede all other types of rules.
 }
 
 .background-green {
-  background: #34a234;
+  background: #4ff8c8;
 }
 
 .background-orange {
-  background: #cb6907;
+  background: #ffc285;
 }
 
 .background-gray {

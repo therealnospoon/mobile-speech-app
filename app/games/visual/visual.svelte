@@ -11,7 +11,7 @@
 				<formattedString>
 					<span
 						text="{level.config.word}"
-						class="text text-h1 text-light"
+						class="text-h1-light"
 					/>
 				</formattedString>
 			</label>
@@ -24,7 +24,7 @@
 				<formattedString>
 					<span
 						text="Incorrect"
-						class="text text-h1 text-light"
+						class="text-h1-light"
 					/>
 				</formattedString>
 			</label>
