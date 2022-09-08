@@ -17,52 +17,52 @@ const config:Game = {
     levels: [
         {
             timeLimit: false,
+            subLevels: [
+                {
+                    timeLimit: false,
+                    config: {
+                        object : "🏊🏼‍♀️",
+                        question : "Where do you go swimming?",
+                        options : ["⛺️", "🌅", "⛲️", "🏞"], 
+                        answer: "🌅",
+                    }
+                },
+                {
+                    timeLimit: false,
+                    config: {
+                        object : "🏬",
+                        question : "Who cooks at the restaurant?",
+                        options : ["👷🏻‍♀️", "👽", "🏂", "🧑🏻‍🍳"], 
+                        answer: "🧑🏻‍🍳",
+                    }
+                }, 
+            ],
             config: {
-                subLevels: [
-                    {
-                        timeLimit: false,
-                        config: {
-                            object : "🏊🏼‍♀️",
-                            question : "Where do you go swimming?",
-                            options : ["⛺️", "🌅", "⛲️", "🏞"], 
-                            answer: "🌅",
-                        }
-                    },
-                    {
-                        timeLimit: false,
-                        config: {
-                            object : "🏬",
-                            question : "Who cooks at the restaurant?",
-                            options : ["👷🏻‍♀️", "👽", "🏂", "🧑🏻‍🍳"], 
-                            answer: "🧑🏻‍🍳",
-                        }
-                    }, 
-                ]
             } 
         },
         {
             timeLimit: false,
+            subLevels: [
+                {
+                    timeLimit: false,
+                    config: {
+                        object : "🎸",
+                        question : "Who plays this instrument?",
+                        options : ["⛹🏻‍♀️", "👷🏻‍♀️", "👩🏼‍🎤", "🧑🏻‍🍳"], 
+                        answer: "👩🏼‍🎤",
+                    }
+                },
+                {
+                    timeLimit: false,
+                    config: {
+                        object : "🏈",
+                        question : "Where is this ball thrown?",
+                        options : ["🏥", "🏟", "🪐", "🛣"], 
+                        answer: "🏟",
+                    }
+                }, 
+            ],
             config: {
-                subLevels: [
-                    {
-                        timeLimit: false,
-                        config: {
-                            object : "🎸",
-                            question : "Who plays this instrument?",
-                            options : ["⛹🏻‍♀️", "👷🏻‍♀️", "👩🏼‍🎤", "🧑🏻‍🍳"], 
-                            answer: "👩🏼‍🎤",
-                        }
-                    },
-                    {
-                        timeLimit: false,
-                        config: {
-                            object : "🏈",
-                            question : "Where is this ball thrown?",
-                            options : ["🏥", "🏟", "🪐", "🛣"], 
-                            answer: "🏟",
-                        }
-                    }, 
-                ]
             } 
         },
        
