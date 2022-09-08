@@ -1,13 +1,20 @@
 .icon {
-    width: 24px;
+    width: 48px;
     height: auto;
-    padding: 16px;
+}
+.icon[data-size="medium"] {
+width: 100px;
+height: 100px;
+}
 
-    &.medium {
-        width: 35px;
-    }
+.icon[data-size="large"] {
+width: 350px;
+}
 
-    &.large {
-        width: 60px;
-    }
+.icon[data-scale="up"] {
+transform: scale(1.05);
+}
+
+.icon[data-scale="down"] {
+transform: scale(.95);
 }
