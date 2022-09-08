@@ -58,7 +58,10 @@ const reset = () => {
 }
 
 const handleCard = (card, idx) => {
-	if(revealed.length < 2) {
+	if(revealed.includes(idx)) {
+		return
+		
+	} else if(revealed.length < 2) {
 		revealed = [
 			...revealed,
 			idx,
