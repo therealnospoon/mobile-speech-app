@@ -41,7 +41,7 @@
 				<formattedString>
 					<span
 						text="Correct!"
-						class="text text-h1 text-light"
+						class="text-h1-light"
 					/>
 				</formattedString>
 			</label>
@@ -55,7 +55,7 @@
 				<formattedString>
 					<span
 						text="Try again"
-						class="text text-h1 text-light"
+						class="text-h1-light"
 					/>
 				</formattedString>
 			</label>
