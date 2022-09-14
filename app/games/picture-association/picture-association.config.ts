@@ -5,7 +5,7 @@ import PictureAssociation from "~/games/picture-association/picture-association.
 const config:Game = {
     name: "Picture Association",
     icon: "eye",
-    description: "Choose the pictures to answer questions.",
+    description: "Choose right picture.",
     component: PictureAssociation,
     tutorial: {
         media: {

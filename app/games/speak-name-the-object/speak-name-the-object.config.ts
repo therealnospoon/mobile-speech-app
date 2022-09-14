@@ -5,7 +5,7 @@ import SpeakObject from "~/games/speak-name-the-object/speak-name-the-object.sve
 const config:Game = {
     name: "Name The Object",
     icon: "speech",
-    description: "Say the name of the object pictured.",
+    description: "Say the object's name.",
     component: SpeakObject,
     tutorial: {
         media: {
