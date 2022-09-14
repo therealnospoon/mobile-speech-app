@@ -120,7 +120,7 @@ const exit = () => navigate({
 All games follow a similar pattern:
 1. Tutorial
 2. Playing
-3. Next Level/Wind
+3. Next Level/Win
 
 This pattern is handled using the components found in `~/pages/game/`.
 
@@ -142,11 +142,12 @@ Once the user has read the tutorial and clicks the play button, the game compone
 <svelte:component
     this={game.component}
     level={game.levels[levelIndex]}
+    levelIndex={levelIndex}
+    subLevelIndex={subLevelIndex}
     on:win={handleWin}
     on:lose={handleLose}
 />
 ```
-
 ### On Win
 The user is redirected to `win.svelte` which prompts them to play the next level (if there is one) or finish the game. When they finish, they will be redirected to the home screen.
 ```js
@@ -161,7 +162,7 @@ const exit = () => navigate({
 [WIP]
 
 ### Next Level
-If the user selects "Next Level", the game component will be rerendered but with the next level defined in the game config.
+If the user selects "Next Level", the game component will be rerendered but with the next level defined in the game config. For levels that contain subLevels, the game component will be rerendered with the subLevel Index being reset to 0.
 ```js
 const nextLevel = () => navigate({
     page: Play,
@@ -171,6 +172,7 @@ const nextLevel = () => navigate({
 
         // Auto advance the level
         levelIndex: levelIndex + 1,
+        subLevelIndex: 0
     }
 });
 ```
@@ -249,6 +251,87 @@ const config:Game = {
 ### Level Configs
 Each level must have a `timeLimit` and `config` property. The `config` property can be whatever your game needs it to be as long as it's an object. Each level will be passed into the game component one at a time as `win.svelte` advances the level index.
 
+### Sublevel Configs
+If your exercise requires using sublevels, simply add a sublevels property to your level's config object. This subLevel property's value is an array which is comprised of objects that look exactly like a level object. If your game uses subLevels, the play component will automatically load in your sublevel into the level prop of the custom svelte:component. When the player completes a sublevel, the 'win' event will trigger the handleWin function in play.svelte that will check to see if there is another sublevel to play. If another sublevel exists, the Play component will rerender the game component with the next subLevel and tick up the subLevelIndex. See example of how to configure sublevels into your game.
+
+```js
+import { Game } from "~/types"
+
+const config:Game = {
+    name: "Cognitive",
+    icon: "~/static/brain.png",
+    description: "Flip over cards to find pairs.",
+    component: GameCognitive,
+    tutorial: {
+        media: {
+            type: "image",
+            src: "~/static/brain.png",
+        },
+        instructions: "Click tiles to flip them over and reveal what's underneath. You can only flip over two tiles at once, and matched pairs will remain flipped over.",
+    },
+    levels: [
+       {
+            timeLimit: false,
+            config: {
+                subLevels: [
+                    {
+                        timeLimit: false,
+                        config: {
+                            object : "🍎",
+                            question : "What sound does the object start with?",
+                            options : ["K", "B", "A", "Q"], 
+                            answer: "A",
+                            format: "letters"
+                        }
+                    },
+                    {
+                        timeLimit: false,
+                        config: {
+                            object : "🍎",
+                            question : "What word starts with the same sound?",
+                            options : ["Car", "Game", "Play", "Actual"], 
+                            answer: "Actual",
+                            format: "words"
+                        }
+                    },
+                    {
+                        timeLimit: false,
+                        config: {
+                            object : "🍎",
+                            question : "What sound does the object end with?",
+                            options : ["E", "B", "A", "Q"], 
+                            answer: "E",
+                            format: "letters"
+                        }
+                    },
+                    {
+                        timeLimit: false,
+                        config: {
+                            object : "🍎",
+                            question : "What word does the object rhyme with?",
+                            options : ["Lake", "Chapel", "Game", "Motor"], 
+                            answer: "Chapel",
+                            format: "words"
+                        }
+                    },
+                    {
+                        timeLimit: false,
+                        config: {
+                            object : "🍎",
+                            question : "How many syllables does the word have?",
+                            options : ["1", "2", "3", "4"], 
+                            answer: "2",
+                            format: "numbers"
+                        }
+                    },
+                   
+                ]
+            } 
+        },
+    ]
+}
+```
+
 ### Game Component Boilerplate
 ```html
 <page class="page">
@@ -272,3 +355,51 @@ Each level must have a `timeLimit` and `config` property. The `config` property 
     const handleWin = () => dispatch("win");
 </script>
 ```
+### Using Voice-To-Text
+Some games require utilizing iOS voice-to-text feature. This can easily be implemented by using the 'Voice Store' in your game component. See below for example of current usage in a game component that requires voice-to-text:
+```html
+<page class="page">
+    <!-- use the onClose prop for GameNav to pass in stopSpeechListener function so it can run when closing the game from GameNav component -->
+    <GameNav onClose="{stopSpeechListener}"/>
+
+    <!-- Other game template here -->
+</page>
+<script type="ts">
+    import { onMount } from "svelte";
+
+    import type { GameLevel } from "~/types";
+    
+    import createSpeechListener from "~/stores/voice-store.js";
+
+    import GameNav from "~/components/game-nav.svelte"
+
+    // The current level
+    export let level:GameLevel;
+
+    const {
+        speechStore, // Store that contains text from the SpeechRecognition module
+        startSpeechListener, // Function that tells SpeechRecognition instance to begin listening for audio input;
+        stopSpeechListener, // Function that stops SpeechRecognition instance to stop listening;
+    } = createSpeechListener();
+
+    onMount(() => {
+        try {
+            startSpeechListener();
+        } catch (error) {
+            console.log(error);
+        }
+    });
+
+    // End the game
+    const handleWin = () => dispatch("win");
+</script>
+```
+
+# Deploy
+Deploy the most recent version of the app to TestFlight. Make sure you have deploy permissions.
+1. Checkout `git checkout main` and `git pull`.
+2. Build the native script project. You can do this with `ns build ios` or utilizing `ns run ios` and using a simulator or your phone. You just need the project to generate fresh XCode files one way or another.
+3. Once a build has happened, open `./platforms/ios/s2mmobile.xcworkspace` in XCode. Double check and verify in XCode the app "Display Name", "Bundle Identifier" and "Version" look as expected.
+4. Archive the current files. In the top menu navigate to Product > Archive.
+5. Once Archive is complete, you'll get a pop up of recent archives. Select the latest and click "Distribute App".
+6. If distribute was a success, you should be able to view the new version in [Apple Connect](https://appstoreconnect.apple.com/). Once it finishes processing it will show up in TestFlight.

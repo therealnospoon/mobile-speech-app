@@ -333,8 +333,10 @@ The imported CSS rules must precede all other types of rules.
 }
 
 .text {
-  color: black;
+  font-family: "Roboto";
+  color: rgba(0, 0, 0, 0.472);
   font-size: 18px;
+  font-weight: 400;
 }
 
 .text-light {
@@ -342,12 +344,13 @@ The imported CSS rules must precede all other types of rules.
 }
 
 .text-bold {
-  font-weight: bold;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.898);
 }
 
 .text-micro {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .text-gold {
@@ -363,14 +366,45 @@ The imported CSS rules must precede all other types of rules.
   font-weight: bold;
 }
 
+.text-green {
+  color: rgb(23, 97, 47);
+}
+
 .text-h1 {
+  color: rgba(0, 0, 0, 0.898);
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 .text-h2 {
-  font-size: 24px;
-  font-weight: bold;
+  color: rgba(0, 0, 0, 0.867);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.text-h3 {
+  color: rgba(0, 0, 0, 0.867);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.text-h1-light {
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.text-h2-light {
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.text-h3-light {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-weight: 800;
 }
 
 .button {
@@ -409,11 +443,25 @@ The imported CSS rules must precede all other types of rules.
 }
 
 .icon {
-  width: 100px;
+  width: 48px;
+  height: auto;
 }
 
-.icon-large {
+.icon[data-size=medium] {
+  width: 100px;
+  height: 100px;
+}
+
+.icon[data-size=large] {
   width: 350px;
+}
+
+.icon[data-scale=up] {
+  transform: scale(1.05);
+}
+
+.icon[data-scale=down] {
+  transform: scale(0.95);
 }
 
 .border {
@@ -454,6 +502,10 @@ The imported CSS rules must precede all other types of rules.
   background: #f3f3f3;
 }
 
+.background-light {
+  background-color: white;
+}
+
 @keyframes flip-card {
   from {
     transform: rotateY(0);
@@ -470,6 +522,15 @@ The imported CSS rules must precede all other types of rules.
     opacity: 1;
   }
 }
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
 .animate-flip {
   animation-name: flip-card;
   animation-duration: 750ms;
@@ -482,6 +543,13 @@ The imported CSS rules must precede all other types of rules.
   animation-fill-mode: forwards;
 }
 
+.animate-fade-up {
+  opacity: 0;
+  animation-name: fadeInUp;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
 .nav {
   padding: 40px;
   border-width: 0 0 1 0;
@@ -489,17 +557,17 @@ The imported CSS rules must precede all other types of rules.
 }
 
 .page {
-  background: white;
+  background: rgb(255, 255, 255);
   margin: 40px;
 }
 
 .card {
   padding: 40px;
-  background: white;
   border-width: 1;
-  border-color: black;
+  background-color: white;
+  border-color: rgb(224, 224, 224);
   border-radius: 10;
-  color: black;
+  box-shadow: 1px 1px 5px 5px #595959;
   width: 100%;
 }
 

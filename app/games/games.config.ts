@@ -1,13 +1,21 @@
-import type { GamesArray } from "~/types"
+import type { GamesArray } from "~/types";
 
 import Cognitive from "~/games/cognitive/cognitive.config";
 import Visual from "~/games/visual/visual.config";
-import Speech from "~/games/speech/speech.config";
+import SpeakPhrase from "~/games/speak-phrase/speak-phrase.config";
+import SpeakWord from "~/games/speak-word/speak-word.config";
+import SpeakObject from "~/games/speak-name-the-object/speak-name-the-object.config";
+import ComponentAnalysis from "~/games/phonological/phonological-components-analysis.config";
+import PictureAssociation from "~/games/picture-association/picture-association.config";
 
 const games:GamesArray = [
     Cognitive,
     Visual,
-    Speech,
-]
+    SpeakPhrase,
+    SpeakWord,
+    SpeakObject,
+    ComponentAnalysis,
+    PictureAssociation
+];
 
 export default games;

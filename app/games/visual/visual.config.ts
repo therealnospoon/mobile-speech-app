@@ -4,7 +4,7 @@ import GameVisual from "~/games/visual/visual.svelte";
 
 const config:Game = {
     name: "Visual",
-    icon: "~/static/eye.png",
+    icon: "eye",
     description: "Match images with words.",
     component: GameVisual,
     tutorial: {

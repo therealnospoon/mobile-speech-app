@@ -32,17 +32,17 @@ The imported CSS rules must precede all other types of rules.
 }
 
 .page {
-  background: white;
+  background: rgb(255, 255, 255);
   margin: 40px;
 }
 
 .card {
   padding: 40px;
-  background: white;
   border-width: 1;
-  border-color: black;
+  background-color: white;
+  border-color: rgb(224, 224, 224);
   border-radius: 10;
-  color: black;
+  box-shadow: 1px 1px 5px 5px #595959;
   width: 100%;
 }
 

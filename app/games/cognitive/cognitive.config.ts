@@ -4,7 +4,7 @@ import GameCognitive from "~/games/cognitive/cognitive.svelte";
 
 const config:Game = {
     name: "Cognitive",
-    icon: "~/static/brain.png",
+    icon: "brain",
     description: "Flip over cards to find pairs.",
     component: GameCognitive,
     tutorial: {

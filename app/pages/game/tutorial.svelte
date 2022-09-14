@@ -1,8 +1,8 @@
 <page class="page">
     <actionBar title="How To Play" color="black"/>
 
-    <flexboxLayout flexDirection="column" alignItems="center" class="mt-4">
-		<image src="{game.icon}" class="icon-large p-1 my-4" />
+    <flexboxLayout flexDirection="column" alignItems="center" class="mt-4 w-100">
+		<Icon name="{game.icon}" size="large" customClass="my-4" />
 
 		<stackLayout class="my-2 p-1" width="100%">
 			<!-- svelte-ignore a11y-label-has-associated-control -->
@@ -35,6 +35,7 @@ import { GameDefaults } from '~/defaults';
 import type { Game } from "~/types";
 
 import Play from "~/pages/game/play.svelte";
+import Icon from "~/components/icon.svelte";
 
 export let game:Game = GameDefaults;
 

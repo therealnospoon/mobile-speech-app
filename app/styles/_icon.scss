@@ -1,8 +1,20 @@
 .icon {
-    width: 100px;
-    height: 100px;
+    width: 48px;
+    height: auto;
+}
+.icon[data-size="medium"] {
+width: 100px;
+height: 100px;
 }
 
-.icon-large {
-    width: 350px;
+.icon[data-size="large"] {
+width: 350px;
+}
+
+.icon[data-scale="up"] {
+transform: scale(1.05);
+}
+
+.icon[data-scale="down"] {
+transform: scale(.95);
 }
