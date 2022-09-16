@@ -1,0 +1,57 @@
+$spacer: 18;
+
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme. 
+The imported CSS rules must precede all other types of rules.
+*/
+@import '~@nativescript/theme/css/core.css';
+@import '~@nativescript/theme/css/default.css';
+
+@import "sizing";
+@import "spacing";
+@import "text";
+@import "button";
+@import "opacity";
+@import "icon";
+@import "border";
+@import "background";
+@import "animations";
+
+.nav {
+  padding: 40px;
+  border-width: 0 0 1 0;
+  border-color: black;
+}
+
+.page {
+  background: rgb(255, 255, 255);
+  margin: 40px;
+}
+
+.card {
+  padding: 40px;
+  border-width: 1;
+  background-color: white;
+  border-color: rgb(224, 224, 224);
+  border-radius: 10;
+  box-shadow: 1px 1px 5px 5px #595959;
+  width: 100%;
+}
+
+.card-green {
+  background: #34a234;
+  border-color: rgb(52, 162, 52);
+  color: white;
+}
+
+.game-card {
+  width: 40%;
+}
