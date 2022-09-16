@@ -43,7 +43,7 @@
 			</label>
 		{/if}
 	</flexboxLayout>
-	<flexboxLayout flexWrap="wrap" justifycontent="center">
+	<flexboxLayout flexWrap="wrap" justifyContent="center">
 		{#each level.config.options as card, idx}
 			<stackLayout class="p-1" width="49%" height="400px">
 				{#if successIndex === idx}

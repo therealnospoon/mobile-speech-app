@@ -3,9 +3,6 @@ hooks/
 node_modules/
 platforms/
 
-# NativeScript Template
-*.js.map
-
 # Logs
 logs
 *.log
@@ -22,8 +19,6 @@ yarn-error.log*
 .project
 tmp/
 typings/
-package-lock.json
-app.css.map
 
 # Visual Studio Code
 .vscode/*
@@ -31,6 +26,3 @@ app.css.map
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-
-*.tgz
-webpack.config.js
