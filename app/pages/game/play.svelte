@@ -11,9 +11,9 @@
 </page>
 
 <script type="ts">
-import { navigate } from 'svelte-native';
+import { navigate } from "svelte-native";
 
-import { GameDefaults } from '~/defaults';
+import { GameDefaults } from "~/defaults";
 import type { Game } from "~/types";
 
 import Win from "~/pages/game/win.svelte";
@@ -24,7 +24,7 @@ export let game:Game = GameDefaults;
 export let levelIndex:number;
 export let subLevelIndex:number = 0;
 
-let subLevelsExist:boolean = game.levels[levelIndex].subLevels ? true : false;
+const subLevelsExist:boolean = Boolean(game.levels[levelIndex].subLevels);
 
 const nextLevel = subLevelsExist ? game.levels[levelIndex].subLevels[subLevelIndex + 1] : undefined;
 
@@ -33,45 +33,44 @@ let won = false;
 const handleWin = () => {
     won = true;
 
-    //Checks if this event should increment the subLevelIndex and navigate back to Play with new subLevelIndex or to invoke Win component to move to the next levelIndex
+    // Checks if this event should increment the subLevelIndex and navigate back to Play with new subLevelIndex or to invoke Win component to move to the next levelIndex
     if(subLevelsExist && nextLevel) {
         setTimeout(() => {
             navigate({
                 // @ts-ignore
-                page: Play,
-                clearHistory: true,
-                props : {
+                page         : Play,
+                clearHistory : true,
+                props        : {
                     game,
                     levelIndex,
-                    subLevelIndex: subLevelIndex + 1
-                }
+                    subLevelIndex : subLevelIndex + 1,
+                },
             });
         }, 1000);
     } else {
         setTimeout(() => {
             navigate({
                 // @ts-ignore
-                page: Win,
-                clearHistory: true,
-                props : {
+                page         : Win,
+                clearHistory : true,
+                props        : {
                     game,
                     levelIndex,
-                }
+                },
             });
         }, 1000);
     }
-}
+};
 
 const handleLose =  () => navigate({
     // @ts-ignore
-    page: Lose,
-    clearHistory: true,
-    props : {
+    page         : Lose,
+    clearHistory : true,
+    props        : {
         game,
         levelIndex,
-    }
+    },
 });
 
 $: level = subLevelsExist ? game.levels[levelIndex].subLevels[subLevelIndex] : game.levels[levelIndex];
-
 </script>

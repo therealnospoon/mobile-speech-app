@@ -44,7 +44,7 @@ const {
     speechStore,
     startSpeechListener,
     stopSpeechListener,
-} = createSpeechListener()
+} = createSpeechListener();
 
 const dispatch = createEventDispatcher();
 
@@ -59,6 +59,5 @@ const handleTap = () => {
         dispatch("analyze", $speechStore);
         isListening = false;
     }
-}
-
+};
 </script>

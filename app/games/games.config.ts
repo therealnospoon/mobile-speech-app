@@ -15,7 +15,7 @@ const games:GamesArray = [
     SpeakWord,
     SpeakObject,
     ComponentAnalysis,
-    PictureAssociation
+    PictureAssociation,
 ];
 
 export default games;
