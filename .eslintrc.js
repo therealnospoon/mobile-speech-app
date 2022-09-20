@@ -19,7 +19,7 @@ module.exports = {
     plugins : [
         "@typescript-eslint",
         "svelte3",
-        "resolver-typescript",
+        "import",
     ],
 
     overrides : [
@@ -30,7 +30,15 @@ module.exports = {
     ],
 
     settings : {
+        // pass the TypeScript package to the Svelte plugin
+        "svelte3/typescript"  : () => require("typescript"),
         "import/core-modules" : [ "svelte" ],
+        "import/resolver"     : {
+            typescript : {
+                // eslint-disable-next-line line-comment-position
+                alwaysTryTypes : true, // always try to resolve types under `<root>@types` directory even it doesn't contain any source code, like `@types/unist`
+            },
+        },
     },
 
     rules : {

@@ -71,9 +71,9 @@
 </page>
 
 <script type="ts">
-import { navigate } from 'svelte-native';
+import { navigate } from "svelte-native";
 
-import { GameDefaults } from '~/defaults';
+import { GameDefaults } from "~/defaults";
 import type { Game } from "~/types";
 
 import Play from "~/pages/game/play.svelte";
@@ -85,18 +85,18 @@ export let levelIndex:number;
 
 const nextLevel = () => navigate({
     // @ts-ignore
-    page: Play,
-    clearHistory: true,
-    props : {
+    page         : Play,
+    clearHistory : true,
+    props        : {
         game,
-        levelIndex: levelIndex + 1,
-        subLevelIndex: 0,
-    }
+        levelIndex    : levelIndex + 1,
+        subLevelIndex : 0,
+    },
 });
 
 const exit = () => navigate({
     // @ts-ignore
-    page: Home,
-    clearHistory: true,
+    page         : Home,
+    clearHistory : true,
 });
 </script>
