@@ -56,8 +56,8 @@ import { createEventDispatcher } from "svelte";
 
 import type { Game, GameLevel } from "~/types";
 
-import GameNav from '~/components/game-nav.svelte';
-import Speech from '~/components/speech.svelte';
+import GameNav from "~/components/game-nav.svelte";
+import Speech from "~/components/speech.svelte";
 
 export let level:GameLevel;
 export let game:Game;
@@ -68,7 +68,6 @@ let incorrect:boolean = false;
 const dispatch = createEventDispatcher();
 
 const analyze = ({ detail: capturedAudio }) => {
-    
     if(capturedAudio.toLowerCase() === level.config.word.toLowerCase()) {
         success = true;
 
@@ -78,7 +77,7 @@ const analyze = ({ detail: capturedAudio }) => {
 
         setTimeout(() => {
             incorrect = false;
-        }, 1000)
+        }, 1000);
     }
-}
+};
 </script>
