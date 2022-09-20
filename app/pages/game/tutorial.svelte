@@ -29,9 +29,9 @@
 </page>
 
 <script type="ts">
-import { navigate } from 'svelte-native';
+import { navigate } from "svelte-native";
 
-import { GameDefaults } from '~/defaults';
+import { GameDefaults } from "~/defaults";
 import type { Game } from "~/types";
 
 import Play from "~/pages/game/play.svelte";
@@ -41,11 +41,11 @@ export let game:Game = GameDefaults;
 
 const launchGame = () => navigate({
     // @ts-ignore
-    page: Play,
-	clearHistory: true,
-    props : {
+    page         : Play,
+    clearHistory : true,
+    props        : {
         game,
-        levelIndex: 0,
-    }
+        levelIndex : 0,
+    },
 });
 </script>
