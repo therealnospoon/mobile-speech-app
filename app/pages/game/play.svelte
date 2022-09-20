@@ -24,7 +24,7 @@ export let game:Game = GameDefaults;
 export let levelIndex:number;
 export let subLevelIndex:number = 0;
 
-let subLevelsExist:boolean = Boolean(game.levels[levelIndex].subLevels);
+const subLevelsExist:boolean = Boolean(game.levels[levelIndex].subLevels);
 
 const nextLevel = subLevelsExist ? game.levels[levelIndex].subLevels[subLevelIndex + 1] : undefined;
 
