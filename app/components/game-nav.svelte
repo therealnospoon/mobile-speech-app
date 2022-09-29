@@ -16,8 +16,8 @@
 <script type="ts">
     import type { Game } from "~/types";
 
-    import { navigate } from 'svelte-native';
-    import { GameDefaults } from '~/defaults';
+    import { navigate } from "svelte-native";
+    import { GameDefaults } from "~/defaults";
 
     import Home from "~/pages/home.svelte";
     import Icon from "~/components/icon.svelte";
@@ -30,8 +30,8 @@
 
         navigate({
             // @ts-ignore
-            page: Home,
-            clearHistory: true,
+            page         : Home,
+            clearHistory : true,
         });
     };
 </script>

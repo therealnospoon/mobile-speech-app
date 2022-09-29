@@ -411,10 +411,10 @@ The imported CSS rules must precede all other types of rules.
   border-radius: 10;
   color: white;
   background: rgb(35, 35, 35);
-  padding: 32px;
-  height: 32px;
+  padding: 44px;
   margin: 0;
   font-size: 18px;
+  transition: transform 300ms ease-in-out;
 }
 
 .button-outline {
@@ -422,7 +422,7 @@ The imported CSS rules must precede all other types of rules.
   color: rgb(35, 35, 35);
   border-width: 1;
   border-color: black;
-  padding: 32px;
+  padding: 44px;
   margin: 0;
 }
 
@@ -567,7 +567,7 @@ The imported CSS rules must precede all other types of rules.
   background-color: white;
   border-color: rgb(224, 224, 224);
   border-radius: 10;
-  box-shadow: 1px 1px 20px -7px rgba(0,0,0,0.50);
+  box-shadow: 1px 1px 20px -7px rgba(0, 0, 0, 0.5);
   width: 100%;
 }
 
