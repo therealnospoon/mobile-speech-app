@@ -36,7 +36,7 @@ import type { GameLevel, Game } from "~/types";
 
 import shuffleArray from "~/util/shuffle-array";
 
-import GameNav from '~/components/game-nav.svelte';
+import GameNav from "~/components/game-nav.svelte";
 
 export let level:GameLevel;
 export let game:Game;
@@ -49,46 +49,45 @@ let revealed = [];
 let matched = [];
 
 const reset = () => {
-	matched = [];
-	revealed = [];
-	gameList = shuffleArray([
-		...level.config.cards,
-		...level.config.cards
-	]);
-}
+    matched = [];
+    revealed = [];
+    gameList = shuffleArray([
+        ...level.config.cards,
+        ...level.config.cards,
+    ]);
+};
 
 const handleCard = (card, idx) => {
-	if(revealed.includes(idx)) {
-		return
-		
-	} else if(revealed.length < 2) {
-		revealed = [
-			...revealed,
-			idx,
-		]
+    if(revealed.includes(idx)) {
+        return;
+    } else if(revealed.length < 2) {
+        revealed = [
+            ...revealed,
+            idx,
+        ];
 
-		const [
-			firstIndex,
-			secondIndex,
-		] = revealed;
+        const [
+            firstIndex,
+            secondIndex,
+        ] = revealed;
 
-		if(gameList[firstIndex] === gameList[secondIndex]) {
-			matched = [
-				...matched,
-				card,
-			]
+        if(gameList[firstIndex] === gameList[secondIndex]) {
+            matched = [
+                ...matched,
+                card,
+            ];
 
-			revealed = [];
-		}
-	} else if(revealed.length === 2) {
-		revealed = [ idx ];
-	}
+            revealed = [];
+        }
+    } else if(revealed.length === 2) {
+        revealed = [ idx ];
+    }
 
-	// If all matched
-	if(level.config.cards.every((card) => matched.includes(card))) {
-		dispatch("win");
-	}
-}
+    // If all matched
+    if(level.config.cards.every((card) => matched.includes(card))) {
+        dispatch("win");
+    }
+};
 
 onMount(reset);
 </script>

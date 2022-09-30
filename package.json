@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@nativescript-community/ui-neumorphiclayout": "^2.0.4",
-    "@nativescript/core": "^8.1.5",
+    "@nativescript/core": "^8.3.4",
     "@nativescript/theme": "~3.0.2",
     "nativescript-speech-recognition": "^2.0.0",
     "sass": "^1.54.0",
