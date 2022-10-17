@@ -46,6 +46,12 @@ The imported CSS rules must precede all other types of rules.
   width: 100%;
 }
 
+.timer {
+  background-color: white;
+  border-radius: 100%;
+  box-shadow: 1px 1px 20px -15px rgba(0, 0, 0, 0.5);
+}
+
 .card-green {
   background: #34a234;
   border-color: rgb(52, 162, 52);
