@@ -187,7 +187,7 @@ const defAlert: JsColorAnimationDefinition = {
 };
 
 const getResults = async () => {
-    const results = await Http.getJSON(`https://dictionaryapi.com/api/v3/references/thesaurus/json/${level.config.word}?key=0a82501d-c873-4e18-a591-272fca0d4988`).then((wordObject) => {
+    const results = await Http.getJSON(`${process.env.WEBSTER_API}/references/thesaurus/json/${level.config.word}?key=${process.env.WEBSTER_KEYS}`).then((wordObject) => {
         if(level.config.type === "antonyms") {
             return wordObject[0].meta.ants.flat();
         }
