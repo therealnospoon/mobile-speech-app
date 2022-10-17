@@ -3,70 +3,70 @@ import type { Game } from "~/types";
 import PictureAssociation from "~/games/picture-association/picture-association.svelte";
 
 const config:Game = {
-    name: "Picture Association",
-    icon: "eye",
-    description: "Choose right picture.",
-    component: PictureAssociation,
-    tutorial: {
-        media: {
-            type: "image",
-            src: "~/static/eye.png",
+    name        : "Picture Association",
+    icon        : "eye",
+    description : "Choose right picture.",
+    component   : PictureAssociation,
+    tutorial    : {
+        media : {
+            type : "image",
+            src  : "~/static/eye.png",
         },
-        instructions: "Choose the best picture that answers the question",
+        instructions : "Choose the best picture that answers the question",
     },
-    levels: [
+    levels : [
         {
-            timeLimit: false,
-            subLevels: [
+            timeLimit : false,
+            subLevels : [
                 {
-                    timeLimit: false,
-                    config: {
-                        object : "🏊🏼‍♀️",
+                    timeLimit : false,
+                    config    : {
+                        object   : "🏊🏼‍♀️",
                         question : "Where do you go swimming?",
-                        options : ["⛺️", "🌅", "⛲️", "🏞"], 
-                        answer: "🌅",
-                    }
+                        options  : [ "⛺️", "🌅", "⛲️", "🏞" ],
+                        answer   : "🌅",
+                    },
                 },
                 {
-                    timeLimit: false,
-                    config: {
-                        object : "🏬",
+                    timeLimit : false,
+                    config    : {
+                        object   : "🏬",
                         question : "Who cooks at the restaurant?",
-                        options : ["👷🏻‍♀️", "👽", "🏂", "🧑🏻‍🍳"], 
-                        answer: "🧑🏻‍🍳",
-                    }
-                }, 
+                        options  : [ "👷🏻‍♀️", "👽", "🏂", "🧑🏻‍🍳" ],
+                        answer   : "🧑🏻‍🍳",
+                    },
+                },
             ],
-            config: {
-            } 
+            config : {
+            },
         },
         {
-            timeLimit: false,
-            subLevels: [
+            timeLimit : false,
+            subLevels : [
                 {
-                    timeLimit: false,
-                    config: {
-                        object : "🎸",
+                    timeLimit : false,
+                    config    : {
+                        object   : "🎸",
                         question : "Who plays this instrument?",
-                        options : ["⛹🏻‍♀️", "👷🏻‍♀️", "👩🏼‍🎤", "🧑🏻‍🍳"], 
-                        answer: "👩🏼‍🎤",
-                    }
+                        options  : [ "⛹🏻‍♀️", "👷🏻‍♀️", "👩🏼‍🎤", "🧑🏻‍🍳" ],
+                        answer   : "👩🏼‍🎤",
+                    },
                 },
                 {
-                    timeLimit: false,
-                    config: {
-                        object : "🏈",
+                    timeLimit : false,
+                    config    : {
+                        object   : "🏈",
                         question : "Where is this ball thrown?",
-                        options : ["🏥", "🏟", "🪐", "🛣"], 
-                        answer: "🏟",
-                    }
-                }, 
+                        options  : [ "🏥", "🏟", "🪐", "🛣" ],
+                        answer   : "🏟",
+                    },
+                },
             ],
-            config: {
-            } 
+            config : {
+            },
         },
        
-    ]
-}
+    ],
+};
 
 export default config;

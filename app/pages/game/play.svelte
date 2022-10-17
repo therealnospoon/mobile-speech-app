@@ -35,30 +35,26 @@ const handleWin = () => {
 
     // Checks if this event should increment the subLevelIndex and navigate back to Play with new subLevelIndex or to invoke Win component to move to the next levelIndex
     if(subLevelsExist && nextLevel) {
-        setTimeout(() => {
-            navigate({
-                // @ts-ignore
-                page         : Play,
-                clearHistory : true,
-                props        : {
-                    game,
-                    levelIndex,
-                    subLevelIndex : subLevelIndex + 1,
-                },
-            });
-        }, 1000);
+        navigate({
+            // @ts-ignore
+            page         : Play,
+            clearHistory : true,
+            props        : {
+                game,
+                levelIndex,
+                subLevelIndex : subLevelIndex + 1,
+            },
+        });
     } else {
-        setTimeout(() => {
-            navigate({
-                // @ts-ignore
-                page         : Win,
-                clearHistory : true,
-                props        : {
-                    game,
-                    levelIndex,
-                },
-            });
-        }, 1000);
+        navigate({
+            // @ts-ignore
+            page         : Win,
+            clearHistory : true,
+            props        : {
+                game,
+                levelIndex,
+            },
+        });
     }
 };
 
