@@ -125,7 +125,7 @@ import { createEventDispatcher } from "svelte";
 
 import type { Game, GameLevel } from "~/types";
 
-import GameNav from '~/components/game-nav.svelte';
+import GameNav from "~/components/game-nav.svelte";
 
 export let level:GameLevel;
 
@@ -137,23 +137,23 @@ export let subLevelIndex;
 let successIndex:number = -1;
 let incorrectIndex:number = -1;
 
-    const dispatch = createEventDispatcher();
+const dispatch = createEventDispatcher();
 
-	const handleCard = (card, idx) => {
-		if(successIndex > -1 || incorrectIndex > -1) {
-			return;
-		}
+const handleCard = (card, idx) => {
+    if(successIndex > -1 || incorrectIndex > -1) {
+        return;
+    }
 
-		if(card === level.config.answer) {
-			successIndex = idx;
+    if(card === level.config.answer) {
+        successIndex = idx;
 
-            dispatch("win")
-		} else {
-			incorrectIndex = idx;
+        dispatch("win");
+    } else {
+        incorrectIndex = idx;
 
-            setTimeout(() => {
-				incorrectIndex = -1;
-            }, 1000)
-		}
-	}
+        setTimeout(() => {
+            incorrectIndex = -1;
+        }, 1000);
+    }
+};
 </script>

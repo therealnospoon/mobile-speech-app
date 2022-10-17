@@ -3,54 +3,54 @@ import type { Game } from "~/types";
 import SpeakObject from "~/games/speak-name-the-object/speak-name-the-object.svelte";
 
 const config:Game = {
-    name: "Name The Object",
-    icon: "speech",
-    description: "Say the object's name.",
-    component: SpeakObject,
-    tutorial: {
-        media: {
-            type: "image",
-            src: "~/static/speech.png",
+    name        : "Name The Object",
+    icon        : "speech",
+    description : "Say the object's name.",
+    component   : SpeakObject,
+    tutorial    : {
+        media : {
+            type : "image",
+            src  : "~/static/speech.png",
         },
-        instructions: "Say the name of the pictured object.",
+        instructions : "Say the name of the pictured object.",
     },
-    levels: [
+    levels : [
         {
-            timeLimit: false,
-            config: {
+            timeLimit : false,
+            config    : {
                 picture : "🎂",
-                word    : ["cake"]
-            } 
+                word    : [ "cake" ],
+            },
         },
         {
-            timeLimit: false,
-            config: {
+            timeLimit : false,
+            config    : {
                 picture : "🥖",
-                word    : ["bread", "loaf", "baguette"]
-            } 
+                word    : [ "bread", "loaf", "baguette" ],
+            },
         },
         {
-            timeLimit: false,
-            config: {
+            timeLimit : false,
+            config    : {
                 picture : "🎱",
-                word    : ["eightball", "eight ball"]
-            } 
+                word    : [ "eightball", "eight ball" ],
+            },
         },
         {
-            timeLimit: false,
-            config: {
+            timeLimit : false,
+            config    : {
                 picture : "🌅",
-                word    : ["sunset", "sun"]
-            } 
+                word    : [ "sunset", "sun" ],
+            },
         },
         {
-            timeLimit: false,
-            config: {
+            timeLimit : false,
+            config    : {
                 picture : "🚑",
-                word    : ["ambulance"]
-            } 
+                word    : [ "ambulance" ],
+            },
         },
-    ]
-}
+    ],
+};
 
 export default config;
