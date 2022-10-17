@@ -24,6 +24,7 @@ tmp/
 typings/
 package-lock.json
 app.css.map
+.env*
 
 # Visual Studio Code
 .vscode/*
