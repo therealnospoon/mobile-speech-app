@@ -14,7 +14,8 @@
           "ES2017"
       ],
       "types": [
-          "svelte"
+          "svelte",
+          "node"
       ],
       "baseUrl": ".",
       "paths": {
