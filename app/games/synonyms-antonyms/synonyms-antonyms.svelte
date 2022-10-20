@@ -96,7 +96,7 @@
                 on:startTimer={startTimer}
                 on:stopTimer={stopTimer}
                 on:cancel={cancel}
-                timeLimit={10}
+                timeLimit={60}
                 buttonText={"Start timer"}
             />
         </stackLayout>
@@ -207,7 +207,7 @@ const startTimer = ({ detail: handleSubmit }) => {
     animate(2000, [ def1, def2 ]);
 
     isTimerRunning = true;
-    timeleft = 10;
+    timeleft = 60;
 
     timerID = setInterval(() => {
         timeleft -= 1;
@@ -257,15 +257,15 @@ const analyze = async ({ detail: capturedAudio }) => {
     }
 };
 
-$: timeleft = 10;
+$: timeleft = 60;
 
-$: if(timeleft <= 5 && timeleft > 3) {
+$: if(timeleft <= 20 && timeleft > 10) {
     timerCaution = true;
 } else {
     timerCaution = false;
 }
 
-$: if(timeleft <= 3 && timeleft > 0) {
+$: if(timeleft <= 10 && timeleft > 0) {
     timerCaution = false;
     timerAlert = true;
 } else {
