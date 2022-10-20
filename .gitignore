@@ -34,4 +34,3 @@ app.css.map
 !.vscode/extensions.json
 
 *.tgz
-webpack.config.js
