@@ -204,7 +204,7 @@ const stopTimer = () => {
 };
 
 const startTimer = ({ detail: handleSubmit }) => {
-    animate(2000, [ def1, def2 ]);
+    animate(1000, [ def1, def2 ]);
 
     isTimerRunning = true;
     timeleft = 10;
@@ -238,11 +238,15 @@ const cancel = () => {
 const analyze = async ({ detail: capturedAudio }) => {
     const userWords = capturedAudio.split(" ");
 
+    const lowerCasedWords = userWords.map((word) => word.toLowerCase());
+
+    const noDuplicatesArr = [ ...new Set(lowerCasedWords) ];
+
     if(userWords.length > 0) {
         const validationArray = await getResults();
-    
-        userWords.forEach((word) => {
-            if(validationArray.includes(word.toLowerCase())) {
+        
+        noDuplicatesArr.forEach((word) => {
+            if(validationArray.includes(word)) {
                 correctAnswers.push(word);
             }
         });
