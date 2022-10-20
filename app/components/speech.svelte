@@ -74,8 +74,6 @@ let isListening = false;
 
 let isTimerRunning = false;
 
-// let timerID;
-
 const handleCancel = async () => {
     await stopSpeechListener();
     dispatch("cancel");
