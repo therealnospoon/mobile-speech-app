@@ -8,6 +8,7 @@ import SpeakObject from "~/games/speak-name-the-object/speak-name-the-object.con
 import ComponentAnalysis from "~/games/phonological/phonological-components-analysis.config";
 import PictureAssociation from "~/games/picture-association/picture-association.config";
 import SynonymsAntonyms from "~/games/synonyms-antonyms/synonyms-antonyms.config";
+import TouchOrder from "~/games/touch-order/touch-order.config";
 
 const games:GamesArray = [
     Cognitive,
@@ -18,6 +19,7 @@ const games:GamesArray = [
     ComponentAnalysis,
     PictureAssociation,
     SynonymsAntonyms,
+    TouchOrder,
 ];
 
 export default games;
