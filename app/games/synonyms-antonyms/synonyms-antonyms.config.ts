@@ -5,14 +5,14 @@ import SynonymsAntonyms from "~/games/synonyms-antonyms/synonyms-antonyms.svelte
 const config:Game = {
     name        : "Synonyms and antonyms",
     icon        : "speech",
-    description : "Find synonyms and antonyms.",
+    description : "Identify synonyms and antonyms.",
     component   : SynonymsAntonyms,
     tutorial    : {
         media : {
             type : "image",
             src  : "~/static/speech.png",
         },
-        instructions : "Come up with as many synonyms and antonyms for the given word as possible within a given time limit.",
+        instructions : "Come up a synonym and an antonym for the given word.",
     },
     levels : [
         {
@@ -21,17 +21,15 @@ const config:Game = {
                 {
                     timeLimit : false,
                     config    : {
-                        word   : "Easy",
-                        type   : "synonyms",
-                        target : 3,
+                        word : "Easy",
+                        type : "synonym",
                     },
                 },
                 {
                     timeLimit : false,
                     config    : {
-                        word   : "Easy",
-                        type   : "antonyms",
-                        target : 3,
+                        word : "Easy",
+                        type : "antonym",
                     },
                 },
             ],
@@ -44,17 +42,15 @@ const config:Game = {
                 {
                     timeLimit : false,
                     config    : {
-                        word   : "Delicious",
-                        type   : "synonyms",
-                        target : 3,
+                        word : "Delicious",
+                        type : "synonym",
                     },
                 },
                 {
                     timeLimit : false,
                     config    : {
-                        word   : "Delicious",
-                        type   : "antonyms",
-                        target : 3,
+                        word : "Delicious",
+                        type : "antonym",
                     },
                 },
             ],
