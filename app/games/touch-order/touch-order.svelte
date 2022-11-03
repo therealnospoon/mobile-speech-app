@@ -15,8 +15,55 @@
              />
          </formattedString>
         </label>
-     </stackLayout>
+
+    </stackLayout>
     
+    <flexboxLayout 
+        class="mb-3" 
+        dock="top"  
+        flexWrap="wrap"
+        justifyContent="center" 
+        width="50%"
+    >
+        <!-- svelte-ignore a11y-label-has-associated-control -->
+        <label
+        class="animate-fade-in mb-1"
+        textWrap="true"
+       >
+        <formattedString>
+            <span
+                text={`${selected.length ? selected.length : "0"} / ${sequence.length}`}
+                class="text"
+            />
+        </formattedString>
+       </label>
+
+       <progress class="progress-bar" value={currentProgress} />
+    </flexboxLayout>
+
+    <flexboxLayout 
+        dock="top"
+        class="mb-2"
+        justifyContent="center"
+        width="100%"
+        height="75px"
+    >
+        {#each selected as touched}
+         <!-- svelte-ignore a11y-label-has-associated-control -->
+         <label
+         class="mx-1 animate-pop-in"
+         textWrap="true"
+        >
+         <formattedString>
+             <span
+                 text={touched}
+                 class="text text-h1"
+             />
+         </formattedString>
+        </label>
+        {/each}
+    </flexboxLayout>
+
     <stackLayout dock="bottom" >
         <flexboxLayout
             flexWrap="wrap"
@@ -81,10 +128,10 @@ export let game:Game;
 const dispatch = createEventDispatcher();
 
 let gameList = [];
-
 let selected = [];
+let sequence = [];
+
 let incorrect:boolean = false;
-let sequence;
 
 const reset = () => {
     incorrect = false;
@@ -123,4 +170,6 @@ onMount(() => {
 
     sequence = level.config.sequence;
 });
+
+$: currentProgress = (selected.length / sequence.length) * 100;
 </script>

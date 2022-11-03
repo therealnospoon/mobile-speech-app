@@ -28,6 +28,18 @@
     }
 }
 
+@keyframes bounce-scale {
+    0%   { 
+      transform: scale(0);
+    }
+    50%  { 
+      transform: scale(1.15); 
+    }
+    100% { 
+      transform: scale(1);
+    }
+}
+
 .animate-flip {
     animation-name: flip-card;
     animation-duration: 750ms;
@@ -46,3 +58,10 @@
     animation-duration: 500ms;
     animation-fill-mode: forwards;
 }
+
+.animate-pop-in {
+    animation-name: bounce-scale;
+    animation-duration: 200ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.53,.05,.38,1.57);
+  }
